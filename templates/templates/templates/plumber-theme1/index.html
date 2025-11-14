@@ -1,1 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Local Plumber in Your Town | Fast, Reliable & Emergency Plumbing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Local plumber in Your Town for boiler repairs, leaks, bathrooms and 24/7 emergency call-outs. Fast response, honest pricing and guaranteed workmanship." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020617;
+      --bg-soft: #030712;
+      --card: #020617;
+      --border: #1f2937;
+      --border-soft: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #f97316;
+      --accent-deep: #ea580c;
+      --danger: #ef4444;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4.5rem; /* space for mobile bar */
+    }
+    a { color: inherit; text-decoration: none; }
 
+    header {
+      padding: 1.1rem 1.25rem 0.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    .brand-tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: var(--muted);
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    .nav-cta {
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.5rem 1.25rem 3rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 1.5rem;
+      padding: 1.6rem 1.4rem;
+      border-radius: 1.3rem;
+      border: 1px solid var(--border-soft);
+      background:
+        radial-gradient(circle at top left, rgba(248, 113, 22, 0.25), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.09), transparent 55%),
+        #020617;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.82);
+      border: 1px solid rgba(148,163,184,0.4);
+      color: #e5e7eb;
+      font-size: 0.78rem;
+      margin-bottom: 0.7rem;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      margin-bottom: 0.4rem;
+    }
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+    .hero-list {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .hero-list li {
+      display: flex;
+      gap: 0.35rem;
+      margin-bottom: 0.3rem;
+    }
+    .hero-list span.icon {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-top: 0.04rem;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      gap: 0.35rem;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(248,113,22,0.45);
+    }
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.65rem 1.3rem;
+      font-size: 0.86rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.85);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .hero-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.98);
+      padding: 1rem 1rem 0.9rem;
+      font-size: 0.82rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .badge {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      border: 1px solid rgba(148,163,184,0.6);
+      color: var(--muted);
+    }
+    .badge.red {
+      border-color: rgba(248,113,113,0.8);
+      color: #fecaca;
+    }
+    .hero-num {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      margin-top: 0.4rem;
+    }
+    .hero-stat-label {
+      color: var(--muted);
+    }
+    .hero-stat-value {
+      font-weight: 600;
+    }
+    .hero-small {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* Section wrappers */
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section-head {
+      margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+    .section-title {
+      font-size: 1.25rem;
+    }
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    /* Services grid */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 0.85rem;
+    }
+    @media (max-width: 900px) {
+      .cards-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: var(--card);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.95rem 1rem;
+      font-size: 0.86rem;
+    }
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+    .card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0.5rem;
+    }
+    .card li {
+      display: flex;
+      gap: 0.28rem;
+      margin-bottom: 0.2rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .card li span.icon {
+      color: var(--accent);
+      margin-top: 0.06rem;
+      font-size: 0.82rem;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    /* Process row */
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 0.7rem;
+      font-size: 0.8rem;
+    }
+    @media (max-width: 800px) {
+      .process {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+    .step {
+      border-radius: 0.9rem;
+      border: 1px dashed var(--border);
+      padding: 0.7rem 0.65rem;
+      background: rgba(15,23,42,0.7);
+    }
+    .step-num {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+    .step-title {
+      font-size: 0.88rem;
+      margin-bottom: 0.2rem;
+    }
+    .step p {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Reviews & areas */
+    .reviews-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .reviews-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+    .review-card {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.9);
+      padding: 0.9rem 0.9rem 0.8rem;
+      font-size: 0.82rem;
+      margin-bottom: 0.5rem;
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+    .review-name {
+      font-weight: 600;
+      font-size: 0.86rem;
+    }
+    .stars {
+      color: #facc15;
+      font-size: 0.8rem;
+    }
+    .review-text {
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .review-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .areas-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+    }
+    .areas-list span {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0.9rem;
+    }
+    @media (max-width: 800px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .faq-item {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.8rem 0.8rem 0.75rem;
+      background: rgba(15,23,42,0.7);
+      font-size: 0.84rem;
+    }
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .faq-a {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.9rem 0.9rem;
+      background: linear-gradient(135deg, rgba(248,113,22,0.14), rgba(15,23,42,0.95));
+      font-size: 0.9rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 0.9rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .contact-cta {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-cta p {
+      color: var(--text);
+    }
+    .contact-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .contact-right {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .contact-right strong {
+      color: var(--text);
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.3rem 1.25rem 2.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: var(--muted);
+    }
+
+    /* Mobile bottom bar */
+    .mobile-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.55rem 0.9rem;
+      background: #020617;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      z-index: 40;
+    }
+    .mobile-bar-text {
+      color: var(--muted);
+    }
+    .mobile-bar-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      border: none;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    @media (min-width: 801px) {
+      .mobile-bar { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-name">Your Company Plumbing</div>
+      <div class="brand-tag">Plumbing • Heating • Emergency call-outs</div>
+    </div>
+    <nav>
+      <a href="index.html#top">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:01234567890" class="nav-cta">
+        <span>📞</span>
+        <span>01234&nbsp;567&nbsp;890</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-pill">
+          <span>✅ Local, trusted plumber in Your Town</span>
+        </div>
+        <h1>Plumber in Your Town for boilers, leaks & 24/7 emergencies.</h1>
+        <p class="hero-sub">
+          Fast-response plumbing and heating for homes and small businesses. No nonsense, no mess left behind, just solid work that keeps water where it should be.
+        </p>
+        <ul class="hero-list">
+          <li><span class="icon">✔</span><span>Same-day appointments and 24/7 emergency call-outs.</span></li>
+          <li><span class="icon">✔</span><span>Boiler repairs, leaks, bathroom installs, radiators and more.</span></li>
+          <li><span class="icon">✔</span><span>Local, fully insured and all work guaranteed.</span></li>
+        </ul>
+        <div class="hero-ctas">
+          <a href="tel:01234567890" class="btn-primary">
+            <span>📞</span>
+            <span>Call now for fast response</span>
+          </a>
+          <a href="contact.html" class="btn-secondary">
+            <span>📝</span>
+            <span>Request a fixed quote</span>
+          </a>
+        </div>
+        <div class="hero-meta">
+          No call centres — you speak directly to your local engineer.
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-header">
+          <div>
+            <div class="badge red">24/7 emergency line</div>
+            <div class="hero-small">Burst pipe? No heating? Boiler down?</div>
+          </div>
+          <div class="hero-num">01234 567 890</div>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-label">Avg. response</div>
+            <div class="hero-stat-value">60 mins*</div>
+          </div>
+          <div>
+            <div class="hero-stat-label">Jobs completed</div>
+            <div class="hero-stat-value">1,200+</div>
+          </div>
+          <div>
+            <div class="hero-stat-label">Rating</div>
+            <div class="hero-stat-value">4.9 ★</div>
+          </div>
+        </div>
+        <div class="hero-small">
+          *Response times vary by time of day and traffic. You’ll always get an honest ETA before we set off.
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section class="section" id="services">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Services</div>
+          <div class="section-title">Plumbing & heating jobs we handle every day.</div>
+        </div>
+        <div class="section-sub">
+          From small leaks to full bathroom installs, we’ve seen it all. Here’s what we can help you with in Your Town and surrounding areas.
+        </div>
+      </div>
+
+      <div class="cards-3">
+        <article class="card">
+          <h3>Boiler repairs & servicing</h3>
+          <p>Boilers that won’t fire up, strange noises, low pressure or no hot water at all.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>Fault finding and emergency repairs.</span></li>
+            <li><span class="icon">✔</span><span>Annual boiler servicing.</span></li>
+            <li><span class="icon">✔</span><span>Landlord safety checks.</span></li>
+          </ul>
+          <span class="chip">Gas & combi boilers</span>
+        </article>
+
+        <article class="card">
+          <h3>Leaks, pipes & radiators</h3>
+          <p>Dripping taps, mystery damp patches, cold radiators or noisy pipes.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>Leak detection and pipe repairs.</span></li>
+            <li><span class="icon">✔</span><span>Radiator repairs, replacements and balancing.</span></li>
+            <li><span class="icon">✔</span><span>Stop tap and mains issues.</span></li>
+          </ul>
+          <span class="chip">Fast diagnosis</span>
+        </article>
+
+        <article class="card">
+          <h3>Bathrooms & upgrades</h3>
+          <p>From swapping a toilet to a full bathroom refit including tiling and fixtures.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>New bathroom installs and refurbishments.</span></li>
+            <li><span class="icon">✔</span><span>Showers, baths and en-suites.</span></li>
+            <li><span class="icon">✔</span><span>Advice on layouts and fixtures.</span></li>
+          </ul>
+          <span class="chip">Planned projects</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">How it works</div>
+          <div class="section-title">Simple, clear and no surprise bills.</div>
+        </div>
+      </div>
+      <div class="process">
+        <div class="step">
+          <div class="step-num">Step 1</div>
+          <div class="step-title">You call or message</div>
+          <p>Tell us what’s going on, share photos if you can and confirm your address.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 2</div>
+          <div class="step-title">We give an ETA & guide price</div>
+          <p>You’ll get an honest arrival window and clear expectation of costs.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 3</div>
+          <div class="step-title">We fix the problem</div>
+          <p>We turn up on time, protect your home and get to work straight away.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 4</div>
+          <div class="step-title">You get a guarantee</div>
+          <p>All workmanship is guaranteed. If something isn’t right, we put it right.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS + AREAS -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Proof</div>
+          <div class="section-title">Trusted by Your Town homeowners & landlords.</div>
+        </div>
+      </div>
+
+      <div class="reviews-wrap">
+        <div>
+          <article class="review-card">
+            <div class="review-header">
+              <div>
+                <div class="review-name">Sarah K – Your Town</div>
+                <div class="review-meta">Boiler repair</div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-text">
+              “Arrived within the hour, found the problem in minutes and had the boiler running again with no mess. Really friendly and explained everything in plain English.”
+            </div>
+            <div class="review-meta">Verified Google review</div>
+          </article>
+          <article class="review-card">
+            <div class="review-header">
+              <div>
+                <div class="review-name">Martin L – Landlord</div>
+                <div class="review-meta">Annual checks & emergencies</div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-text">
+              “Looks after several of my rental properties. Reliable, good with tenants and always fair on price. Exactly what you want from a local plumber.”
+            </div>
+            <div class="review-meta">Verified customer</div>
+          </article>
+        </div>
+
+        <aside class="card">
+          <h3>Areas we cover</h3>
+          <p class="section-sub">
+            Based in Your Town and covering surrounding areas. If you’re just outside the map, give us a call — we’ll tell you straight if we can get to you.
+          </p>
+          <div class="areas-list">
+            <span>Your Town</span>
+            <span>Neighbourhood A</span>
+            <span>Neighbourhood B</span>
+            <span>Village C</span>
+            <span>Village D</span>
+            <span>Postcodes AB1–AB6</span>
+          </div>
+          <p class="contact-meta" style="margin-top:0.6rem;">
+            Commercial and light industrial work also considered – small units, shops and offices.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">FAQ</div>
+          <div class="section-title">Questions customers ask all the time.</div>
+        </div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q">Do you charge a call-out fee?</div>
+          <div class="faq-a">
+            We’re always transparent. For emergencies there is a call-out fee which includes the first part of our time on site. You’ll know this before we attend.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can you give prices over the phone?</div>
+          <div class="faq-a">
+            For some jobs we can give a guide price. For others we’ll need to see the issue first. Either way, you’ll approve all work before we start.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Are you insured and qualified?</div>
+          <div class="faq-a">
+            Yes. We’re fully insured and all gas work is carried out by a registered engineer. Certificates can be shown on request.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you work evenings and weekends?</div>
+          <div class="faq-a">
+            Emergency call-outs are available 24/7 where possible. Planned jobs can be arranged for evenings or Saturdays to suit your schedule.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="section" id="contact">
+      <div class="contact-cta">
+        <div>
+          <h3 style="margin-bottom:0.25rem;">Need a plumber in Your Town today?</h3>
+          <p>
+            Call now for urgent help, or send a quick message and we’ll come back with times and prices. No pressure, no sales chat, just straight answers.
+          </p>
+          <div class="hero-ctas" style="margin-top:0.6rem;">
+            <a href="tel:01234567890" class="btn-primary">
+              <span>📞</span>
+              <span>01234&nbsp;567&nbsp;890</span>
+            </a>
+            <a href="contact.html" class="btn-secondary">
+              <span>📝</span>
+              <span>Message for a quote</span>
+            </a>
+          </div>
+          <div class="contact-meta">
+            Typical working hours: Mon–Fri 8am–6pm. Emergency cover available out of hours.
+          </div>
+        </div>
+        <div class="contact-right">
+          <strong>What to include in your message:</strong>
+          <ul style="margin-top:0.25rem; padding-left:1.1rem;">
+            <li>Your name and address.</li>
+            <li>A short description of the problem.</li>
+            <li>Photos or videos if you have them.</li>
+            <li>When you’re available for a visit.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Your Company Plumbing. All rights reserved.</div>
+    <div>
+      <a href="/legal.html">Legal</a>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <div class="mobile-bar-text">Burst pipe or no heating? Tap to call now.</div>
+    <a href="tel:01234567890" class="mobile-bar-btn">Call plumber</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
