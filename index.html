@@ -2,284 +2,719 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>BuzzBold Marketing | Local SEO & Websites for Real Businesses</title>
+  <title>BuzzBold Marketing | Websites, Local SEO & Social for Real UK Trades</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BuzzBold builds high-converting websites, local SEO and social media systems for UK trades and service businesses – plumbers, electricians, builders, roofers and more." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020617;
+      --bg-alt: #020617;
+      --card: #020617;
+      --border: #1f2937;
+      --border-soft: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #f97316;
+      --accent-deep: #ea580c;
+      --danger: #ef4444;
+    }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #020617;
-      color: #e5e7eb;
+      background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+      color: var(--text);
       line-height: 1.6;
     }
+    a { color: inherit; text-decoration: none; }
     header {
-      padding: 1.5rem 1.25rem;
-      max-width: 960px;
+      padding: 1.25rem 1.25rem 0.75rem;
+      max-width: 1080px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
+    }
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
     }
     .logo {
       font-weight: 800;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 1rem;
-      color: #f97316;
+      font-size: 0.95rem;
+      color: var(--accent);
     }
     .tag {
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: var(--muted);
     }
+    nav {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: var(--muted);
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    .nav-cta {
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text);
+    }
+    .nav-cta span.icon {
+      font-size: 0.9rem;
+    }
+
     main {
-      max-width: 960px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 2rem 1.25rem 3rem;
+      padding: 1.5rem 1.25rem 3.5rem;
     }
+
     .hero-eyebrow {
       font-size: 0.8rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #f97316;
+      color: var(--accent);
       margin-bottom: 0.75rem;
     }
     h1 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-size: clamp(2.05rem, 4vw, 3rem);
       margin-bottom: 0.75rem;
     }
     .hero-sub {
       font-size: 0.95rem;
-      color: #9ca3af;
-      max-width: 32rem;
-      margin-bottom: 1.5rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
     }
     .hero-cta {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2.5rem;
+      gap: 0.7rem;
+      margin-bottom: 1.75rem;
       align-items: center;
     }
     .btn-primary {
-      background: linear-gradient(135deg, #f97316, #ea580c);
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
       color: #fff;
       border: none;
       border-radius: 999px;
-      padding: 0.7rem 1.5rem;
+      padding: 0.75rem 1.6rem;
       font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.4rem;
+      box-shadow: 0 10px 30px rgba(248,113,113,0.18);
+      white-space: nowrap;
     }
-    .btn-secondary {
+    .btn-primary span.icon {
+      font-size: 1rem;
+    }
+    .btn-ghost {
       font-size: 0.85rem;
-      color: #9ca3af;
+      color: var(--muted);
+    }
+    .hero-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.25rem;
+      font-size: 0.75rem;
     }
     .pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.25rem;
-      padding: 0.25rem 0.6rem;
+      gap: 0.3rem;
+      padding: 0.25rem 0.7rem;
       border-radius: 999px;
       background: rgba(15,23,42,0.7);
-      border: 1px solid #1f2937;
-      font-size: 0.75rem;
-      color: #e5e7eb;
+      border: 1px solid var(--border);
+      color: var(--text);
     }
-    .grid {
+    .pill span.icon {
+      font-size: 0.9rem;
+    }
+
+    .grid-hero {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-      gap: 1.5rem;
+      grid-template-columns: minmax(0, 2.4fr) minmax(0, 2.2fr);
+      gap: 1.75rem;
       align-items: flex-start;
+      margin-bottom: 2.75rem;
     }
-    @media (max-width: 768px) {
-      .grid { grid-template-columns: 1fr; }
-      header { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+    @media (max-width: 900px) {
+      .grid-hero {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        justify-content: flex-start;
+      }
     }
+
     .card {
-      background: #020617;
-      border-radius: 1rem;
-      border: 1px solid #1f2937;
+      background: var(--card);
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
       padding: 1.25rem 1.1rem;
       margin-bottom: 1rem;
     }
     .card h2 {
       font-size: 1rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
     }
     .card p {
       font-size: 0.85rem;
-      color: #9ca3af;
+      color: var(--muted);
     }
     .badge-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 0.6rem;
+      margin-top: 0.5rem;
     }
     .badge {
       font-size: 0.75rem;
       padding: 0.2rem 0.55rem;
       border-radius: 999px;
-      background: #0b1120;
-      border: 1px solid #111827;
-      color: #e5e7eb;
+      background: #020617;
+      border: 1px solid var(--border-soft);
+      color: var(--text);
     }
+    .section-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    .section-title {
+      font-size: 1.15rem;
+      margin-bottom: 0.35rem;
+    }
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .trades-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+      font-size: 0.83rem;
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 600px) {
+      .trades-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .trade-pill {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 0.25rem 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #020617;
+      color: var(--text);
+    }
+    .trade-pill span.icon {
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+    @media (max-width: 900px) {
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+    .step {
+      font-size: 0.83rem;
+      border-radius: 0.9rem;
+      border: 1px dashed var(--border);
+      padding: 0.8rem 0.8rem 0.9rem;
+      background: rgba(15,23,42,0.75);
+    }
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 999px;
+      background: rgba(248,113,22,0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.75rem;
+      margin-bottom: 0.3rem;
+    }
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .step p {
+      color: var(--muted);
+    }
+
+    .cols-two {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 2.4fr);
+      gap: 1.4rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 900px) {
+      .cols-two {
+        grid-template-columns: 1fr;
+      }
+    }
+
     ul {
       list-style: none;
       padding-left: 0;
       font-size: 0.85rem;
     }
-    ul li {
-      margin-bottom: 0.35rem;
+    li {
       display: flex;
       gap: 0.35rem;
-      align-items: flex-start;
+      margin-bottom: 0.3rem;
     }
-    ul li span.icon {
-      color: #f97316;
+    li span.icon {
+      color: var(--accent);
       font-size: 0.9rem;
       margin-top: 0.1rem;
     }
-    .section-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.9rem;
     }
+    @media (max-width: 900px) {
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .package {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.9rem 1rem;
+      background: radial-gradient(circle at top left, rgba(249,115,22,0.08), #020617 45%);
+      font-size: 0.86rem;
+    }
+    .package.featured {
+      border-color: var(--accent);
+      box-shadow: 0 15px 45px rgba(249,115,22,0.24);
+    }
+    .package-name {
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+    .package-tagline {
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .package-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .themes-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    .contact-card {
+      margin-top: 0.8rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.8fr);
+      gap: 1rem;
+    }
+    @media (max-width: 800px) {
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-card .info {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .contact-card .info strong {
+      color: var(--text);
+    }
+    .contact-card form {
+      font-size: 0.8rem;
+    }
+    .field {
+      margin-bottom: 0.5rem;
+    }
+    .field label {
+      display: block;
+      margin-bottom: 0.15rem;
+      color: var(--muted);
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 0.45rem 0.55rem;
+      border-radius: 0.5rem;
+      border: 1px solid #374151;
+      background: #020617;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+    .field textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .disclaimer {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
     footer {
-      border-top: 1px solid #1f2937;
+      border-top: 1px solid var(--border);
       padding: 1rem 1.25rem 2rem;
-      max-width: 960px;
+      max-width: 1080px;
       margin: 0 auto;
       font-size: 0.8rem;
       color: #6b7280;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
     }
     footer a {
       color: #9ca3af;
       text-decoration: none;
+      margin-right: 0.6rem;
+    }
+
+    .mobile-cta-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #020617;
+      border-top: 1px solid var(--border);
+      padding: 0.5rem 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      z-index: 40;
+    }
+    .mobile-cta-bar .small {
+      color: var(--muted);
+    }
+    .mobile-cta-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      border: none;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    @media (min-width: 800px) {
+      .mobile-cta-bar {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div>
+    <div class="logo-wrap">
       <div class="logo">BuzzBold Marketing</div>
-      <div class="tag">Websites • Local SEO • Social</div>
+      <div class="tag">Websites • Local SEO • Social for UK trades</div>
     </div>
-    <div class="pill">
-      <span>⚡</span>
-      <span>Built for real local businesses</span>
-    </div>
+    <nav>
+      <a href="#top">Home</a>
+      <a href="#packages">Packages</a>
+      <a href="#trades">Who we work with</a>
+      <a href="#contact">Contact</a>
+      <a href="#login" class="nav-cta">
+        <span class="icon">🔐</span>
+        <span>Client login (coming soon)</span>
+      </a>
+    </nav>
   </header>
 
-  <main>
-    <div class="hero-eyebrow">Local-first digital growth</div>
-    <h1>Websites, Google and social that actually bring you jobs in.</h1>
-    <p class="hero-sub">
-      BuzzBold builds, launches and manages high-converting websites and local SEO for real trades and service
-      businesses – not big faceless brands. One place to sort your website, Google Business Profile and social.
-    </p>
+  <main id="top">
+    <section class="grid-hero">
+      <div>
+        <div class="hero-eyebrow">Local-first digital growth</div>
+        <h1>Websites, Google & social that actually bring you jobs in.</h1>
+        <p class="hero-sub">
+          BuzzBold builds high-converting websites, local SEO and social systems for real UK trades and service
+          businesses – plumbers, sparkies, roofers, mechanics and more. Built to get your phone ringing, not to win design awards.
+        </p>
 
-    <div class="hero-cta">
-      <a href="#contact" class="btn-primary">
-        Book a free discovery call →
-      </a>
-      <div class="btn-secondary">
-        No jargon. No long contracts. Just clear, trackable results.
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary">
+            <span class="icon">⚡</span>
+            <span>Book a free discovery call</span>
+          </a>
+          <a href="#packages" class="btn-ghost">View website & social packages →</a>
+        </div>
+
+        <div class="hero-strip">
+          <div class="pill">
+            <span class="icon">📍</span>
+            <span>Built to dominate local search & Google Maps</span>
+          </div>
+          <div class="pill">
+            <span class="icon">🧱</span>
+            <span>5 page “Launch Local” & 12 page “Domination” builds</span>
+          </div>
+          <div class="pill">
+            <span class="icon">🧰</span>
+            <span>Made for trades – not big faceless brands</span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="grid">
-      <section>
-        <div class="card">
-          <h2>Launch Local – 5 page starter site</h2>
-          <p>Perfect if you need a clean, fast site and to start showing up on Google.</p>
-          <div class="badge-row">
-            <span class="badge">5-page website</span>
-            <span class="badge">Local SEO foundations</span>
-            <span class="badge">Google Business setup</span>
+      <aside class="card">
+        <div class="section-label">Who we work with</div>
+        <div class="section-title">Trades & services we’re built around</div>
+        <p class="section-sub">
+          We don’t try to be everything to everyone. BuzzBold is built specifically for local service businesses that win work within a drive-time radius.
+        </p>
+        <div id="trades" class="trades-grid">
+          <div class="trade-pill">
+            <span class="icon">🔧</span><span>Plumbers</span>
+          </div>
+          <div class="trade-pill">
+            <span class="icon">💡</span><span>Electricians</span>
+          </div>
+          <div class="trade-pill">
+            <span class="icon">🏗</span><span>Builders & contractors</span>
+          </div>
+          <div class="trade-pill">
+            <span class="icon">🎨</span><span>Painters & decorators</span>
+          </div>
+          <div class="trade-pill">
+            <span class="icon">🌿</span><span>Landscaping & gardening</span>
+          </div>
+          <div class="trade-pill">
+            <span class="icon">🏠</span><span>Roofing</span>
+          </div>
+          <div class="trade-pill">
+            <span class="icon">🚗</span><span>Car mechanics & auto repair</span>
+          </div>
+          <div class="trade-pill">
+            <span class="icon">➕</span><span>Plus other local services</span>
+          </div>
+        </div>
+        <p class="themes-note">
+          For each trade we’re building multiple ready-to-go website designs in both 5-page and 12-page versions – so you can launch fast and still look bespoke.
+        </p>
+      </aside>
+    </section>
+
+    <section class="cols-two">
+      <div class="card">
+        <div class="section-label">How it works</div>
+        <div class="section-title">Simple, clear and built around your day-to-day</div>
+        <p class="section-sub">
+          No jargon. No fluff. We focus on the pieces that move the needle: website, Google, reviews and basic social.
+        </p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-badge">1</div>
+            <div class="step-title">We learn your business & patch</div>
+            <p>Quick discovery call to understand your services, margins, best jobs and the areas you want to dominate.</p>
+          </div>
+          <div class="step">
+            <div class="step-badge">2</div>
+            <div class="step-title">Pick your build & theme</div>
+            <p>You choose from our proven trade website designs – 5-page “Launch Local” or 12-page “Domination” builds.</p>
+          </div>
+          <div class="step">
+            <div class="step-badge">3</div>
+            <div class="step-title">We launch, track & improve</div>
+            <p>We go live, wire up Google, citations and reviews, then keep an eye on what’s working and where to push harder.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="packages">
+        <div class="section-label">Packages</div>
+        <div class="section-title">Website, local SEO & social built as a system</div>
+        <p class="section-sub">
+          Every build starts with conversion-first design. From there, you can plug in local SEO, citations and managed social to suit your goals and budget.
+        </p>
+
+        <div class="packages-grid">
+          <div class="package">
+            <div class="package-name">Launch Local – 5 page site</div>
+            <div class="package-tagline">For trades who need a clean, fast site and a proper Google presence.</div>
+            <div class="package-meta">Includes: 5-page website • On-page SEO foundations • Google Business Profile setup • Core citations.</div>
+            <ul>
+              <li><span class="icon">✔</span><span>Conversion-focused Home, Services, About, Reviews & Contact pages.</span></li>
+              <li><span class="icon">✔</span><span>Optimised for mobile and local search.</span></li>
+              <li><span class="icon">✔</span><span>Built from proven themes for your trade.</span></li>
+            </ul>
+          </div>
+          <div class="package featured">
+            <div class="package-name">Local Domination – 12 page build</div>
+            <div class="package-tagline">For serious operators who want to own their patch across Google & maps.</div>
+            <div class="package-meta">Includes: 12-page SEO build • Service & area pages • review system • extended citations & tracking.</div>
+            <ul>
+              <li><span class="icon">✔</span><span>Service-specific and area-specific pages to rank for “what you do + where you do it”.</span></li>
+              <li><span class="icon">✔</span><span>Review engine wired to your Google Business Profile.</span></li>
+              <li><span class="icon">✔</span><span>Built to work with your existing offline reputation.</span></li>
+            </ul>
+          </div>
+          <div class="package">
+            <div class="package-name">Social Boost add-ons</div>
+            <div class="package-tagline">Layer social momentum on top of your website & Google presence.</div>
+            <div class="package-meta">Available as: Social Boost, Social Momentum, Social Domination.</div>
+            <ul>
+              <li><span class="icon">✔</span><span>Posting to Facebook, Instagram and Google Business Profile.</span></li>
+              <li><span class="icon">✔</span><span>Templates built for trades – no generic fluff.</span></li>
+              <li><span class="icon">✔</span><span>Access to your own app (coming) to approve posts & track reviews.</span></li>
+            </ul>
           </div>
         </div>
 
-        <div class="card">
-          <h2>Local Growth Engine – website + social</h2>
-          <p>Done-with-you growth: website, citations and Social Boost so you’re visible everywhere that matters.</p>
-          <div class="badge-row">
-            <span class="badge">Website + SEO</span>
-            <span class="badge">Social Boost</span>
-            <span class="badge">Monthly metrics</span>
-          </div>
-        </div>
+        <p class="themes-note">
+          All packages are business-to-business and come with clear terms, no nonsense and no hidden extras. We use our own systems and templates before we roll them out to you.
+        </p>
+      </div>
+    </section>
 
-        <div class="card">
-          <h2>Local Domination – 12 page SEO build</h2>
-          <p>For serious local players who want to own their patch across Google, maps and social.</p>
-          <div class="badge-row">
-            <span class="badge">Service + location pages</span>
-            <span class="badge">Review system</span>
-            <span class="badge">Growth strategy</span>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="card">
-          <div class="section-title">What you get with BuzzBold</div>
+    <section class="card">
+      <div class="section-label">Why BuzzBold</div>
+      <div class="section-title">Built like a platform, sold like a service</div>
+      <p class="section-sub">
+        Most agencies build one-off sites and disappear. We’re building a long-term system – templates, processes and a CRM that you benefit from on day one.
+      </p>
+      <div class="cols-two">
+        <div>
           <ul>
-            <li><span class="icon">✔</span><span>Conversion-first website built for calls and enquiries – not for showing off.</span></li>
-            <li><span class="icon">✔</span><span>Local SEO setup so you can start climbing into the Google Map Pack.</span></li>
-            <li><span class="icon">✔</span><span>Help with Google Business Profile, reviews and basic social presence.</span></li>
-            <li><span class="icon">✔</span><span>Simple pricing, clear deliverables, no nonsense.</span></li>
+            <li><span class="icon">✔</span><span>We specialise in local trades and service businesses – your world, your jobs, your margins.</span></li>
+            <li><span class="icon">✔</span><span>Ready-to-go website themes for each trade in both 5-page and 12-page formats.</span></li>
+            <li><span class="icon">✔</span><span>Citation management built into our internal CRM so your business is consistent everywhere online.</span></li>
+            <li><span class="icon">✔</span><span>We use what we build ourselves first – we don’t sell anything we wouldn’t run for our own brand.</span></li>
           </ul>
         </div>
-
-        <div class="card" id="contact">
-          <div class="section-title">Tell us about your business</div>
-          <p style="margin-bottom:0.75rem;">
-            Drop your details below and we’ll get in touch to see if BuzzBold is a fit for your business.
-          </p>
-          <form>
-            <div style="margin-bottom:0.5rem;">
-              <label style="font-size:0.8rem;">Name<br/>
-                <input type="text" style="width:100%;padding:0.4rem 0.5rem;border-radius:0.4rem;border:1px solid #374151;background:#020617;color:#e5e7eb;">
-              </label>
-            </div>
-            <div style="margin-bottom:0.5rem;">
-              <label style="font-size:0.8rem;">Business name<br/>
-                <input type="text" style="width:100%;padding:0.4rem 0.5rem;border-radius:0.4rem;border:1px solid #374151;background:#020617;color:#e5e7eb;">
-              </label>
-            </div>
-            <div style="margin-bottom:0.5rem;">
-              <label style="font-size:0.8rem;">Email<br/>
-                <input type="email" style="width:100%;padding:0.4rem 0.5rem;border-radius:0.4rem;border:1px solid #374151
-
-::contentReference[oaicite:0]{index=0}
-;background:#020617;color:#e5e7eb;">
-              </label>
-            </div>
-            <div style="margin-bottom:0.75rem;">
-              <label style="font-size:0.8rem;">What do you need help with?<br/>
-                <textarea rows="3" style="width:100%;padding:0.4rem 0.5rem;border-radius:0.4rem;border:1px solid #374151;background:#020617;color:#e5e7eb;"></textarea>
-              </label>
-            </div>
-            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
-              Send enquiry
-            </button>
-          </form>
+        <div>
+          <ul>
+            <li><span class="icon">✔</span><span>Clear, simple pricing for website, local SEO and social add-ons.</span></li>
+            <li><span class="icon">✔</span><span>Built on modern tech (Vercel, modern frontend stack) for speed and stability.</span></li>
+            <li><span class="icon">✔</span><span>All legal, GDPR and data handling thought about from day one.</span></li>
+            <li><span class="icon">✔</span><span>Long-term roadmap: client login, review automation, social scheduler and metrics in one place.</span></li>
+          </ul>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <section class="card" id="contact">
+      <div class="section-label">Next step</div>
+      <div class="section-title">Tell us about your business & patch</div>
+      <p class="section-sub">
+        Share a few details below and we’ll get in touch to see if BuzzBold is the right fit, and which build makes the most sense for you.
+      </p>
+      <div class="contact-card">
+        <div class="info">
+          <p><strong>What to expect:</strong></p>
+          <p>We’ll have a quick chat about:</p>
+          <ul>
+            <li><span class="icon">✔</span><span>Your main services and ideal jobs.</span></li>
+            <li><span class="icon">✔</span><span>The areas you want to dominate.</span></li>
+            <li><span class="icon">✔</span><span>What’s already working (or not) with your website & Google presence.</span></li>
+          </ul>
+          <p style="margin-top:0.6rem;">From there we’ll recommend a 5-page “Launch Local” build, a 12-page “Domination” build, and optional social packages.</p>
+          <p style="margin-top:0.6rem;"><strong>Email:</strong> <a href="mailto:support@buzzboldmarketing.com">support@buzzboldmarketing.com</a></p>
+        </div>
+        <form>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" type="text" placeholder="Joe Bloggs" />
+          </div>
+          <div class="field">
+            <label for="business">Business name</label>
+            <input id="business" type="text" placeholder="BuzzBold Plumbing & Heating" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@business.co.uk" />
+          </div>
+          <div class="field">
+            <label for="trade">Trade / service</label>
+            <input id="trade" type="text" placeholder="Plumber, electrician, roofer, etc." />
+          </div>
+          <div class="field">
+            <label for="areas">Areas you cover</label>
+            <input id="areas" type="text" placeholder="e.g. Croydon, Bromley, Sutton" />
+          </div>
+          <div class="field">
+            <label for="help">What do you need most help with?</label>
+            <textarea id="help" placeholder="Website, Google, reviews, social – tell us where you want to be in 6–12 months."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:0.2rem;">
+            Send enquiry
+          </button>
+          <div class="disclaimer">
+            This form doesn’t sign you up for anything. It just helps us understand if we can genuinely move the needle for your business.
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div>BuzzBold Marketing – built to help real local businesses grow.</div>
-    <div>Contact: <a href="mailto:support@buzzboldmarketing.com">support@buzzboldmarketing.com</a></div>
+    <div>© <span id="year"></span> BuzzBold Marketing. Built for real local businesses.</div>
+    <div>
+      <a href="#legal">Legal</a>
+      <a href="mailto:support@buzzboldmarketing.com">Support</a>
+    </div>
   </footer>
+
+  <div class="mobile-cta-bar">
+    <div class="small">Ready to sort your website & Google properly?</div>
+    <a href="#contact" class="mobile-cta-btn">Book a free call</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
-
-                  
