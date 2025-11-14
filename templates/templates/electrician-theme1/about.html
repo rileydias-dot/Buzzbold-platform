@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Your Company Electrical | Local Electrician in Your Town</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Learn about Your Company Electrical – your local, qualified electrician in Your Town. Friendly, reliable and focused on safe, neat work every time." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020617;
+      --bg-soft: #030712;
+      --card: #020617;
+      --border: #1f2937;
+      --border-soft: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --accent-deep: #16a34a;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4.5rem;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 1.1rem 1.25rem 0.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    .brand-tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a { color: var(--muted); }
+    nav a:hover { color: var(--text); }
+    .nav-cta {
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.5rem 1.25rem 3rem;
+    }
+
+    .page-hero {
+      padding: 1.4rem 1.3rem;
+      border-radius: 1.3rem;
+      border: 1px solid var(--border-soft);
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.25), transparent 55%),
+        #020617;
+      margin-bottom: 2rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+      margin-bottom: 0.4rem;
+    }
+    .page-hero p {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+    .two-col p { color: var(--muted); }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+    .badge {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: rgba(15,23,42,0.85);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 900px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--card);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.95rem 1rem;
+    }
+    .card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    .card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .list-check {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+    .list-check li {
+      display: flex;
+      gap: 0.35rem;
+      margin-bottom: 0.25rem;
+    }
+    .list-check span.icon {
+      color: var(--accent);
+      font-size: 0.86rem;
+      margin-top: 0.05rem;
+    }
+
+    .cta-box {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.9rem 0.9rem;
+      background: linear-gradient(135deg, rgba(34,197,94,0.14), rgba(15,23,42,0.95));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    .cta-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      gap: 0.35rem;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(34,197,94,0.45);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.65rem 1.3rem;
+      font-size: 0.86rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.85);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.3rem 1.25rem 2.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--muted); }
+
+    .mobile-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.55rem 0.9rem;
+      background: #020617;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      z-index: 40;
+    }
+    .mobile-bar-text { color: var(--muted); }
+    .mobile-bar-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      border: none;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    @media (min-width: 801px) { .mobile-bar { display: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-name">Your Company Electrical</div>
+      <div class="brand-tag">Local electrician for homes & small businesses</div>
+    </div>
+    <nav>
+      <a href="index.html#top">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:01234567890" class="nav-cta">
+        <span>📞</span>
+        <span>01234&nbsp;567&nbsp;890</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="eyebrow">About</div>
+      <h1>Your local electrician who treats every job like it’s their own home.</h1>
+      <p>
+        Your Company Electrical is a small, owner-run business based in Your Town.
+        That means you deal with the same person from the first call to the final handover.
+      </p>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2 style="margin-bottom:0.3rem;">How it started</h2>
+        <p>
+          After years working for larger contractors, we set up Your Company Electrical to do
+          things differently – fewer rushed jobs, more time spent doing work properly.
+          Most of our work now comes from repeat customers and word of mouth.
+        </p>
+        <p style="margin-top:0.6rem;">
+          We focus on domestic and light commercial work in Your Town and nearby areas:
+          fault finding, upgrades, small projects and emergency call-outs when things go wrong.
+        </p>
+      </div>
+      <div>
+        <h2 style="margin-bottom:0.3rem;">Qualifications & standards</h2>
+        <p>
+          Safety is non-negotiable. All work is carried out in line with the latest wiring
+          regulations and manufacturer guidance.
+        </p>
+        <div class="badge-row">
+          <span class="badge">Qualified electrician</span>
+          <span class="badge">BS 7671 compliant</span>
+          <span class="badge">Fully insured</span>
+          <span class="badge">Certificates provided</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-3">
+      <article class="card">
+        <h2>Straightforward communication</h2>
+        <p>
+          You’ll always know who is turning up, when they’ll arrive and what they’re doing.
+          If something changes, we’ll tell you before we touch a single cable.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Neat workmanship</h2>
+        <p>
+          We protect floors and surfaces, tidy as we go and leave things how we found them –
+          just safer and working properly.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Aftercare & support</h2>
+        <p>
+          Once the job is done you’re not on your own. If you have questions or something
+          doesn’t feel right, we’re at the end of the phone.
+        </p>
+      </article>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2 style="margin-bottom:0.35rem;">Our typical customers</h2>
+        <ul class="list-check">
+          <li><span class="icon">✔</span><span>Homeowners who want safe, tidy electrics.</span></li>
+          <li><span class="icon">✔</span><span>Landlords needing reliable testing and repairs.</span></li>
+          <li><span class="icon">✔</span><span>Small shops, salons and offices.</span></li>
+          <li><span class="icon">✔</span><span>Builders needing a dependable electrician on projects.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2 style="margin-bottom:0.35rem;">How we work on your job</h2>
+        <ul class="list-check">
+          <li><span class="icon">✔</span><span>Agree the brief, access and budget before starting.</span></li>
+          <li><span class="icon">✔</span><span>Keep you updated if we uncover anything unexpected.</span></li>
+          <li><span class="icon">✔</span><span>Test everything thoroughly before we leave.</span></li>
+          <li><span class="icon">✔</span><span>Provide certificates and paperwork where needed.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta-box">
+        <div>
+          <h2 style="margin-bottom:0.3rem;">Thinking about using us for your next job?</h2>
+          <p>
+            Get in touch for a friendly chat. We’ll let you know if we’re the right fit and
+            give you clear next steps – no pressure.
+          </p>
+          <div class="cta-meta">
+            Perfect for planning rewires, extensions, consumer unit upgrades and lighting projects.
+          </div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
+          <a href="tel:01234567890" class="btn-primary">
+            <span>⚡</span><span>Call 01234&nbsp;567&nbsp;890</span>
+          </a>
+          <a href="contact.html" class="btn-secondary">
+            <span>📝</span><span>Message for advice</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Your Company Electrical. All rights reserved.</div>
+    <div><a href="/legal.html">Legal</a></div>
+  </footer>
+
+  <div class="mobile-bar">
+    <div class="mobile-bar-text">Questions about a job? Tap to call now.</div>
+    <a href="tel:01234567890" class="mobile-bar-btn">Call electrician</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
