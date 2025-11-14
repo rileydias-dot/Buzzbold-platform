@@ -1,1 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Local Electrician in Your Town | Faults, Rewires & Emergency Call-Outs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Local electrician in Your Town for faults, consumer units, rewires, EV chargers and 24/7 emergency call-outs. Fast response, tidy work and clear pricing." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020617;
+      --bg-soft: #030712;
+      --card: #020617;
+      --border: #1f2937;
+      --border-soft: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;      /* greener accent for electrician */
+      --accent-deep: #16a34a;
+      --danger: #ef4444;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4.5rem; /* space for mobile bar */
+    }
+    a { color: inherit; text-decoration: none; }
 
+    header {
+      padding: 1.1rem 1.25rem 0.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    .brand-tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: var(--muted);
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    .nav-cta {
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.5rem 1.25rem 3rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 1.5rem;
+      padding: 1.6rem 1.4rem;
+      border-radius: 1.3rem;
+      border: 1px solid var(--border-soft);
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.25), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.09), transparent 55%),
+        #020617;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.82);
+      border: 1px solid rgba(148,163,184,0.4);
+      color: #e5e7eb;
+      font-size: 0.78rem;
+      margin-bottom: 0.7rem;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      margin-bottom: 0.4rem;
+    }
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+    .hero-list {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .hero-list li {
+      display: flex;
+      gap: 0.35rem;
+      margin-bottom: 0.3rem;
+    }
+    .hero-list span.icon {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-top: 0.04rem;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      gap: 0.35rem;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(34,197,94,0.45);
+    }
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.65rem 1.3rem;
+      font-size: 0.86rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.85);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .hero-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.98);
+      padding: 1rem 1rem 0.9rem;
+      font-size: 0.82rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .badge {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      border: 1px solid rgba(148,163,184,0.6);
+      color: var(--muted);
+    }
+    .badge.red {
+      border-color: rgba(248,113,113,0.8);
+      color: #fecaca;
+    }
+    .hero-num {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      margin-top: 0.4rem;
+    }
+    .hero-stat-label {
+      color: var(--muted);
+    }
+    .hero-stat-value {
+      font-weight: 600;
+    }
+    .hero-small {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* Section wrappers */
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section-head {
+      margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+    .section-title {
+      font-size: 1.25rem;
+    }
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    /* Services grid */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 0.85rem;
+    }
+    @media (max-width: 900px) {
+      .cards-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: var(--card);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.95rem 1rem;
+      font-size: 0.86rem;
+    }
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+    .card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0.5rem;
+    }
+    .card li {
+      display: flex;
+      gap: 0.28rem;
+      margin-bottom: 0.2rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .card li span.icon {
+      color: var(--accent);
+      margin-top: 0.06rem;
+      font-size: 0.82rem;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    /* Process row */
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 0.7rem;
+      font-size: 0.8rem;
+    }
+    @media (max-width: 800px) {
+      .process {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+    .step {
+      border-radius: 0.9rem;
+      border: 1px dashed var(--border);
+      padding: 0.7rem 0.65rem;
+      background: rgba(15,23,42,0.7);
+    }
+    .step-num {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+    .step-title {
+      font-size: 0.88rem;
+      margin-bottom: 0.2rem;
+    }
+    .step p {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Reviews & areas */
+    .reviews-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .reviews-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+    .review-card {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.9);
+      padding: 0.9rem 0.9rem 0.8rem;
+      font-size: 0.82rem;
+      margin-bottom: 0.5rem;
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+    .review-name {
+      font-weight: 600;
+      font-size: 0.86rem;
+    }
+    .stars {
+      color: #facc15;
+      font-size: 0.8rem;
+    }
+    .review-text {
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .review-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .areas-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+    }
+    .areas-list span {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0.9rem;
+    }
+    @media (max-width: 800px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .faq-item {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.8rem 0.8rem 0.75rem;
+      background: rgba(15,23,42,0.7);
+      font-size: 0.84rem;
+    }
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .faq-a {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.9rem 0.9rem;
+      background: linear-gradient(135deg, rgba(34,197,94,0.14), rgba(15,23,42,0.95));
+      font-size: 0.9rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 0.9rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .contact-cta {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-cta p {
+      color: var(--text);
+    }
+    .contact-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .contact-right {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .contact-right strong {
+      color: var(--text);
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.3rem 1.25rem 2.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: var(--muted);
+    }
+
+    /* Mobile bottom bar */
+    .mobile-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.55rem 0.9rem;
+      background: #020617;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      z-index: 40;
+    }
+    .mobile-bar-text {
+      color: var(--muted);
+    }
+    .mobile-bar-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      border: none;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    @media (min-width: 801px) {
+      .mobile-bar { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-name">Your Company Electrical</div>
+      <div class="brand-tag">Fault finding • Upgrades • Emergency call-outs</div>
+    </div>
+    <nav>
+      <a href="index.html#top">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:01234567890" class="nav-cta">
+        <span>📞</span>
+        <span>01234&nbsp;567&nbsp;890</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-pill">
+          <span>✅ Local, qualified electrician in Your Town</span>
+        </div>
+        <h1>Electrician in Your Town for faults, rewires & consumer units.</h1>
+        <p class="hero-sub">
+          Fast-response electrical help for homes and small businesses. Safe, tidy and up to current regulations – with clear prices agreed before any work starts.
+        </p>
+        <ul class="hero-list">
+          <li><span class="icon">✔</span><span>Emergency call-outs for power cuts, tripping circuits and burning smells.</span></li>
+          <li><span class="icon">✔</span><span>Consumer units, rewires, extra sockets, lighting and EV charger installs.</span></li>
+          <li><span class="icon">✔</span><span>Fully qualified, insured and certificates supplied where required.</span></li>
+        </ul>
+        <div class="hero-ctas">
+          <a href="tel:01234567890" class="btn-primary">
+            <span>⚡</span>
+            <span>Call now for urgent electrical help</span>
+          </a>
+          <a href="contact.html" class="btn-secondary">
+            <span>📝</span>
+            <span>Request a quote or safety check</span>
+          </a>
+        </div>
+        <div class="hero-meta">
+          No call centres — speak directly to your local electrician.
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-header">
+          <div>
+            <div class="badge red">24/7 emergency line</div>
+            <div class="hero-small">Power off? Burning smell? Sparking sockets?</div>
+          </div>
+          <div class="hero-num">01234 567 890</div>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-label">Avg. response</div>
+            <div class="hero-stat-value">60 mins*</div>
+          </div>
+          <div>
+            <div class="hero-stat-label">Jobs completed</div>
+            <div class="hero-stat-value">900+</div>
+          </div>
+          <div>
+            <div class="hero-stat-label">Rating</div>
+            <div class="hero-stat-value">4.9 ★</div>
+          </div>
+        </div>
+        <div class="hero-small">
+          *Response times vary by time of day and traffic. You’ll always get an honest ETA before we set off.
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section class="section" id="services">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Services</div>
+          <div class="section-title">Electrical work we carry out every week.</div>
+        </div>
+        <div class="section-sub">
+          From nuisance tripping to full consumer unit upgrades, we keep your electrics safe, compliant and working as they should across Your Town and nearby areas.
+        </div>
+      </div>
+
+      <div class="cards-3">
+        <article class="card">
+          <h3>Fault finding & repairs</h3>
+          <p>Tripping RCDs, dead sockets, lights that won’t work or strange burning smells.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>Rapid fault finding and testing.</span></li>
+            <li><span class="icon">✔</span><span>Repairs to circuits, sockets and lighting.</span></li>
+            <li><span class="icon">✔</span><span>Emergency call-outs for loss of power.</span></li>
+          </ul>
+          <span class="chip">BS 7671 compliant</span>
+        </article>
+
+        <article class="card">
+          <h3>Consumer units & safety</h3>
+          <p>Bring older fuse boxes up to current standards with modern protection.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>New consumer unit installs and upgrades.</span></li>
+            <li><span class="icon">✔</span><span>RCD/RCBO protection added where required.</span></li>
+            <li><span class="icon">✔</span><span>Certification and paperwork provided.</span></li>
+          </ul>
+          <span class="chip">Part P & notified work</span>
+        </article>
+
+        <article class="card">
+          <h3>Lighting, sockets & EV</h3>
+          <p>Make your home work better with sensible electrical upgrades.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>Extra sockets and USB outlets.</span></li>
+            <li><span class="icon">✔</span><span>Indoor & outdoor lighting, security lights and LED upgrades.</span></li>
+            <li><span class="icon">✔</span><span>EV charger installs (home & small commercial).</span></li>
+          </ul>
+          <span class="chip">Future-ready homes</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">How it works</div>
+          <div class="section-title">Safe, simple and fully explained.</div>
+        </div>
+      </div>
+      <div class="process">
+        <div class="step">
+          <div class="step-num">Step 1</div>
+          <div class="step-title">You get in touch</div>
+          <p>Call, message or send photos so we can understand the issue or project.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 2</div>
+          <div class="step-title">We assess & price</div>
+          <p>You’ll get a clear price or estimate before any work begins – no surprises.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 3</div>
+          <div class="step-title">Work completed safely</div>
+          <p>We work to current regulations, keep things tidy and minimise disruption.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 4</div>
+          <div class="step-title">Paperwork & support</div>
+          <p>Certificates supplied where needed and you’re covered by our guarantee.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS + AREAS -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Proof</div>
+          <div class="section-title">Trusted by homeowners, landlords & small businesses.</div>
+        </div>
+      </div>
+
+      <div class="reviews-wrap">
+        <div>
+          <article class="review-card">
+            <div class="review-header">
+              <div>
+                <div class="review-name">Emma J – Your Town</div>
+                <div class="review-meta">Consumer unit upgrade</div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-text">
+              “Explained everything clearly, upgraded our old fuse box and tidied up after. We feel much safer now and the paperwork came through the same day.”
+            </div>
+            <div class="review-meta">Verified Google review</div>
+          </article>
+          <article class="review-card">
+            <div class="review-header">
+              <div>
+                <div class="review-name">Shop owner – High Street</div>
+                <div class="review-meta">Fault finding & lighting</div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-text">
+              “Found the fault quickly, got us back open and suggested better lighting. Professional and easy to deal with – we’ll use again.”
+            </div>
+            <div class="review-meta">Verified customer</div>
+          </article>
+        </div>
+
+        <aside class="card">
+          <h3>Areas we cover</h3>
+          <p class="section-sub">
+            Based in Your Town and covering nearby areas. If you’re just outside, call and we’ll let you know straight away if we can get to you.
+          </p>
+          <div class="areas-list">
+            <span>Your Town</span>
+            <span>Neighbourhood A</span>
+            <span>Neighbourhood B</span>
+            <span>Village C</span>
+            <span>Village D</span>
+            <span>Postcodes AB1–AB6</span>
+          </div>
+          <p class="contact-meta" style="margin-top:0.6rem;">
+            Also available for small commercial units, shops and offices.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">FAQ</div>
+          <div class="section-title">Electrical questions we hear all the time.</div>
+        </div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q">Are you registered and insured?</div>
+          <div class="faq-a">
+            Yes – all work is carried out by a qualified electrician and we hold full public liability insurance. Proof can be shown on request.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can you work around our business hours?</div>
+          <div class="faq-a">
+            For shops and small businesses we can arrange early mornings, evenings or weekends where needed to minimise disruption.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you provide certificates?</div>
+          <div class="faq-a">
+            Yes. Where required, you’ll receive the appropriate electrical certificate and notification after the job is complete.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is every job an emergency call-out?</div>
+          <div class="faq-a">
+            No – many jobs are planned in advance. Emergency rates only apply to genuine out-of-hours or urgent safety issues.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="section" id="contact">
+      <div class="contact-cta">
+        <div>
+          <h3 style="margin-bottom:0.25rem;">Need an electrician in Your Town today?</h3>
+          <p>
+            Call now if something doesn’t feel safe, or send a quick message and we’ll come back with times and prices. Straight answers, no pressure.
+          </p>
+          <div class="hero-ctas" style="margin-top:0.6rem;">
+            <a href="tel:01234567890" class="btn-primary">
+              <span>⚡</span>
+              <span>01234&nbsp;567&nbsp;890</span>
+            </a>
+            <a href="contact.html" class="btn-secondary">
+              <span>📝</span>
+              <span>Message for a quote</span>
+            </a>
+          </div>
+          <div class="contact-meta">
+            Typical working hours: Mon–Fri 8am–6pm. Emergency cover available where possible.
+          </div>
+        </div>
+        <div class="contact-right">
+          <strong>Helpful details to include:</strong>
+          <ul style="margin-top:0.25rem; padding-left:1.1rem;">
+            <li>Your name and address.</li>
+            <li>What’s happening (or what you’d like done).</li>
+            <li>Photos or videos if you have them.</li>
+            <li>When you’re free for a visit.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Your Company Electrical. All rights reserved.</div>
+    <div>
+      <a href="/legal.html">Legal</a>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <div class="mobile-bar-text">No power or tripping electrics? Tap to call now.</div>
+    <a href="tel:01234567890" class="mobile-bar-btn">Call electrician</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
