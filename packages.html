@@ -1,1 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Packages | BuzzBold Marketing – Websites, Local SEO & Social for Trades</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Website, local SEO and social media packages for UK trades and service businesses. 5-page and 12-page builds plus Social Boost add-ons." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020617;
+      --bg-alt: #020617;
+      --card: #020617;
+      --border: #1f2937;
+      --border-soft: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #f97316;
+      --accent-deep: #ea580c;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 1.25rem 1.25rem 0.75rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      color: var(--accent);
+    }
+    .tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: var(--muted);
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    .nav-cta {
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3.5rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      margin-bottom: 0.5rem;
+    }
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin-bottom: 1.4rem;
+    }
+    .hero-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.8rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.7);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .pill span.icon { font-size: 0.9rem; }
+
+    .section-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 2.1fr);
+      gap: 1.4rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 900px) {
+      .grid-two {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.85rem;
+    }
+    li {
+      display: flex;
+      gap: 0.35rem;
+      margin-bottom: 0.3rem;
+    }
+    li span.icon {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-top: 0.1rem;
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.6rem;
+    }
+    @media (max-width: 900px) {
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .package {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.9rem 1rem;
+      background: radial-gradient(circle at top left, rgba(249,115,22,0.08), #020617 45%);
+      font-size: 0.86rem;
+    }
+    .package.featured {
+      border-color: var(--accent);
+      box-shadow: 0 15px 45px rgba(249,115,22,0.25);
+    }
+    .package-name {
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+    .package-tagline {
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .package-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .contact-cta {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+      box-shadow: 0 10px 30px rgba(248,113,113,0.18);
+      white-space: nowrap;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.25rem 2rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      font-size: 0.8rem;
+      color: #6b7280;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    footer a {
+      color: #9ca3af;
+      text-decoration: none;
+      margin-right: 0.6rem;
+    }
+
+    .mobile-cta-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #020617;
+      border-top: 1px solid var(--border);
+      padding: 0.5rem 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      z-index: 40;
+    }
+    .mobile-cta-bar .small {
+      color: var(--muted);
+    }
+    .mobile-cta-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      border: none;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    @media (min-width: 800px) {
+      .mobile-cta-bar { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-wrap">
+      <div class="logo">BuzzBold Marketing</div>
+      <div class="tag">Websites • Local SEO • Social for UK trades</div>
+    </div>
+    <nav>
+      <a href="index.html#top">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="index.html#trades">Who we work with</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="#login" class="nav-cta">
+        <span>🔐</span>
+        <span>Client login (coming soon)</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="hero-eyebrow">Packages</div>
+      <h1>Website, local SEO & social that are built like assets – not expenses.</h1>
+      <p class="hero-sub">
+        Every build starts with a high-conversion website and clear local SEO foundations. From there, you can plug in
+        citations and social packages depending on how hard you want to push.
+      </p>
+      <div class="hero-strip">
+        <div class="pill">
+          <span class="icon">🧱</span>
+          <span>5-page “Launch Local” and 12-page “Domination” versions for each trade.</span>
+        </div>
+        <div class="pill">
+          <span class="icon">📍</span>
+          <span>Built around Google Maps, reviews and local jobs – not vanity metrics.</span>
+        </div>
+        <div class="pill">
+          <span class="icon">🤝</span>
+          <span>Business-to-business, clear terms and no nonsense.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-two">
+      <div class="card">
+        <div class="section-label">Website builds</div>
+        <div class="section-title">Two core build types</div>
+        <p class="section-sub">
+          You choose the build that suits where you are in your business and where you’re trying to get to.
+        </p>
+        <ul>
+          <li><span class="icon">✔</span><span>Built from our trade-specific themes – 5 choices for each trade and build type.</span></li>
+          <li><span class="icon">✔</span><span>Conversion-first layouts: calls, forms and quote requests front and centre.</span></li>
+          <li><span class="icon">✔</span><span>SEO-friendly structure and fast performance out of the box.</span></li>
+          <li><span class="icon">✔</span><span>Ready for citations, reviews and social to plug in as you grow.</span></li>
+        </ul>
+        <p class="note">
+          We don’t show prices on the site – every business is different. You’ll get a clear written proposal before anything starts.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="section-label">Website packages</div>
+        <div class="packages-grid">
+          <div class="package">
+            <div class="package-name">Launch Local – 5 page build</div>
+            <div class="package-tagline">For trades who need a proper online presence and to start showing up on Google.</div>
+            <div class="package-meta">5-page trade website • On-page SEO foundations • Google Business Profile setup • Core citation setup.</div>
+            <ul>
+              <li><span class="icon">✔</span><span>Home, Services overview, About, Reviews/Proof and Contact/Quote pages.</span></li>
+              <li><span class="icon">✔</span><span>One trade-specific theme chosen from our 5 templates for your trade.</span></li>
+              <li><span class="icon">✔</span><span>Basic Google Business optimisation and listing consistency on key sites.</span></li>
+            </ul>
+          </div>
+          <div class="package featured">
+            <div class="package-name">Local Domination – 12 page build</div>
+            <div class="package-tagline">For trades who want to own their patch and show up for “what you do + where you do it”.</div>
+            <div class="package-meta">12-page SEO build • Service & area pages • review system • extended citations & tracking.</div>
+            <ul>
+              <li><span class="icon">✔</span><span>Service-specific pages (e.g. boiler installs, rewires, roof repairs) plus area pages.</span></li>
+              <li><span class="icon">✔</span><span>Built to support a long-term local SEO strategy.</span></li>
+              <li><span class="icon">✔</span><span>Priority for future BuzzBold CRM features and review automation.</span></li>
+            </ul>
+          </div>
+          <div class="package">
+            <div class="package-name">Custom & multi-location builds</div>
+            <div class="package-tagline">For businesses with multiple locations, vans and teams who need more.</div>
+            <div class="package-meta">Multi-location / multi-service builds quoted individually.</div>
+            <ul>
+              <li><span class="icon">✔</span><span>Built on the same core as our 12-page “Domination” builds.</span></li>
+              <li><span class="icon">✔</span><span>Extra locations, services and landing pages as required.</span></li>
+              <li><span class="icon">✔</span><span>Roadmap for leads, tracking and future automations.</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">
+          Website projects have a one-off build fee and, if you choose ongoing support/hosting, a simple monthly service fee. All terms are set out clearly in your agreement.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-label">Social add-ons</div>
+      <div class="section-title">Social Boost, Momentum & Domination</div>
+      <p class="section-sub">
+        Once your website and Google presence are in a good place, we can add simple, structured social posting on top – focused on staying visible and building trust over time.
+      </p>
+
+      <div class="packages-grid">
+        <div class="package">
+          <div class="package-name">Social Boost</div>
+          <div class="package-tagline">For trades who want to stop having “dead” socials.</div>
+          <div class="package-meta">Light but consistent posting to keep your profiles alive.</div>
+          <ul>
+            <li><span class="icon">✔</span><span>Posts to 1–2 platforms (e.g. Facebook + Google Business Profile).</span></li>
+            <li><span class="icon">✔</span><span>Content built from your real jobs, photos and reviews.</span></li>
+            <li><span class="icon">✔</span><span>Best for smaller trades or as a starter add-on.</span></li>
+          </ul>
+        </div>
+        <div class="package featured">
+          <div class="package-name">Social Momentum</div>
+          <div class="package-tagline">For businesses that want steady, professional social presence.</div>
+          <div class="package-meta">Regular posting across key platforms, with simple planning.</div>
+          <ul>
+            <li><span class="icon">✔</span><span>Posts across 2–3 platforms (e.g. Facebook, Instagram, Google Business Profile).</span></li>
+            <li><span class="icon">✔</span><span>Planned content themes (before/after, tips, reviews, behind the scenes).</span></li>
+            <li><span class="icon">✔</span><span>Reports on what content is getting the most engagement.</span></li>
+          </ul>
+        </div>
+        <div class="package">
+          <div class="package-name">Social Domination</div>
+          <div class="package-tagline">For the trades who want to be seen everywhere, all the time.</div>
+          <div class="package-meta">Higher posting volume and more strategy time.</div>
+          <ul>
+            <li><span class="icon">✔</span><span>Posting on multiple platforms with more frequent content.</span></li>
+            <li><span class="icon">✔</span><span>Content plans tied into seasonal work and peak demand times.</span></li>
+            <li><span class="icon">✔</span><span>Best for established businesses that are ready to scale.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note">
+        Social packages are usually agreed on a 6–12 month basis so we have enough time to see meaningful results. You’ll always know exactly what’s included before you sign anything.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="section-label">How we price</div>
+      <div class="section-title">No surprise invoices, no mystery retainers</div>
+      <p class="section-sub">
+        We don’t list numbers on the site because every trade, market and starting point is different. Instead, we walk you through a simple, clear proposal before anything begins.
+      </p>
+      <ul>
+        <li><span class="icon">✔</span><span>One-off website build fee for your 5-page or 12-page build.</span></li>
+        <li><span class="icon">✔</span><span>Optional monthly service fee for hosting, updates and basic support.</span></li>
+        <li><span class="icon">✔</span><span>Social packages priced separately so you can add them when you’re ready.</span></li>
+        <li><span class="icon">✔</span><span>All work is business-to-business with clear terms and minimum commitments set out up front.</span></li>
+      </ul>
+      <div class="contact-cta">
+        <p>Want to see what a BuzzBold package would look like for your business?</p>
+        <a href="index.html#contact" class="btn-primary">
+          <span>📞</span>
+          <span>Request a tailored proposal</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> BuzzBold Marketing. Packages for real local businesses.</div>
+    <div>
+      <a href="index.html#legal">Legal</a>
+      <a href="mailto:support@buzzboldmarketing.com">Support</a>
+    </div>
+  </footer>
+
+  <div class="mobile-cta-bar">
+    <div class="small">Ready to sort your website & Google properly?</div>
+    <a href="index.html#contact" class="mobile-cta-btn">Book a free call</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
