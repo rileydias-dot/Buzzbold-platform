@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Your Company Electrical | Book a Local Electrician</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact Your Company Electrical in Your Town to book a qualified local electrician. Call, email or send a quick message for prices and availability." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020617;
+      --bg-soft: #030712;
+      --card: #020617;
+      --border: #1f2937;
+      --border-soft: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --accent-deep: #16a34a;
+      --danger: #ef4444;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4.5rem;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 1.1rem 1.25rem 0.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    .brand-tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a { color: var(--muted); }
+    nav a:hover { color: var(--text); }
+    .nav-cta {
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.5rem 1.25rem 3rem;
+      font-size: 0.9rem;
+    }
+
+    .page-hero {
+      padding: 1.4rem 1.3rem;
+      border-radius: 1.3rem;
+      border: 1px solid var(--border-soft);
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.25), transparent 55%),
+        #020617;
+      margin-bottom: 2rem;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+      margin-bottom: 0.3rem;
+    }
+    .page-hero p {
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
+      gap: 1.2rem;
+    }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.95rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.65rem;
+    }
+    label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      background: #020617;
+      border-radius: 0.55rem;
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.6rem;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34,197,94,0.4);
+    }
+
+    .inline {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0.6rem;
+    }
+    @media (max-width: 600px) {
+      .inline { grid-template-columns: 1fr; }
+    }
+
+    .hint {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(34,197,94,0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      justify-content: center;
+    }
+
+    .contact-details h2 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .contact-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .details-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.6rem;
+      font-size: 0.88rem;
+    }
+    .details-list li {
+      margin-bottom: 0.4rem;
+    }
+    .details-list strong { color: var(--text); }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.7rem;
+    }
+    .badge {
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: rgba(15,23,42,0.9);
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.3rem 1.25rem 2.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--muted); }
+
+    .mobile-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.55rem 0.9rem;
+      background: #020617;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      z-index: 40;
+    }
+    .mobile-bar-text { color: var(--muted); }
+    .mobile-bar-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      border: none;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    @media (min-width: 801px) { .mobile-bar { display: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-name">Your Company Electrical</div>
+      <div class="brand-tag">Local electrician for homes & small businesses</div>
+    </div>
+    <nav>
+      <a href="index.html#top">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:01234567890" class="nav-cta">
+        <span>📞</span><span>01234&nbsp;567&nbsp;890</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="eyebrow">Contact</div>
+      <h1>Tell us what you need help with.</h1>
+      <p>
+        Use the form, call or email and we’ll come back with availability and prices.
+        No pushy sales chat – just straightforward advice from a local electrician.
+      </p>
+    </section>
+
+    <section class="layout">
+      <article class="card">
+        <form>
+          <div class="inline">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" />
+            </div>
+            <div>
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" placeholder="Best number to reach you" />
+            </div>
+          </div>
+
+          <div class="inline">
+            <div>
+              <label for="email">Email (optional)</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="postcode">Postcode</label>
+              <input id="postcode" name="postcode" type="text" placeholder="e.g. AB1 2CD" />
+            </div>
+          </div>
+
+          <div>
+            <label for="job-type">What do you need?</label>
+            <select id="job-type" name="job-type">
+              <option value="">Select an option</option>
+              <option value="fault">Fault finding / tripping</option>
+              <option value="upgrade">Consumer unit upgrade</option>
+              <option value="lighting">Lighting or sockets</option>
+              <option value="test">Testing / EICR</option>
+              <option value="project">Project or extension</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message">Tell us a bit about the job</label>
+            <textarea id="message" name="message" placeholder="Short description plus any access issues, photos, or preferred times."></textarea>
+            <div class="hint">Don’t worry if you’re not sure – just explain the problem in your own words.</div>
+          </div>
+
+          <div>
+            <label for="when">When are you available?</label>
+            <input id="when" name="when" type="text" placeholder="e.g. Weekdays after 5pm, Saturdays, ASAP for emergencies" />
+          </div>
+
+          <button type="submit" class="btn-primary">
+            <span>📩</span><span>Send message</span>
+          </button>
+          <div class="hint">Form is for demo purposes – in a live site this would send to your chosen email or CRM.</div>
+        </form>
+      </article>
+
+      <aside class="card contact-details">
+        <h2>Other ways to get in touch</h2>
+        <p>If it’s urgent, calling is always fastest. For planned work, email and photos help us give a better estimate.</p>
+
+        <ul class="details-list">
+          <li><strong>Phone:</strong> <a href="tel:01234567890">01234 567 890</a></li>
+          <li><strong>Email:</strong> <a href="mailto:info@yourelectrical.co.uk">info@yourelectrical.co.uk</a></li>
+          <li><strong>Base:</strong> Your Town and surrounding areas</li>
+        </ul>
+
+        <div class="badge-row">
+          <span class="badge">Emergency call-outs where possible</span>
+          <span class="badge">Evening & Saturday slots available</span>
+          <span class="badge">Fully insured & qualified</span>
+        </div>
+
+        <p style="margin-top:0.8rem; color:var(--muted); font-size:0.86rem;">
+          Typical working hours: <strong>Mon–Fri 8am–6pm</strong>.  
+          Emergency work outside these times is subject to availability and call-out charges.
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Your Company Electrical. All rights reserved.</div>
+    <div><a href="/legal.html">Legal</a></div>
+  </footer>
+
+  <div class="mobile-bar">
+    <div class="mobile-bar-text">Need an electrician now? Tap to call.</div>
+    <a href="tel:01234567890" class="mobile-bar-btn">Call electrician</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
