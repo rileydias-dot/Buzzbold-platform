@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Your Company Plumbing | Local Plumber in Your Town</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Learn about Your Company Plumbing in Your Town. Local, qualified and fully insured plumber for boilers, leaks, bathrooms and emergencies. Honest pricing and guaranteed workmanship." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020617;
+      --bg-soft: #030712;
+      --card: #020617;
+      --border: #1f2937;
+      --border-soft: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #f97316;
+      --accent-deep: #ea580c;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4.5rem; /* space for mobile bar */
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 1.1rem 1.25rem 0.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    .brand-tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: var(--muted);
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    .nav-cta {
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.5rem 1.25rem 3rem;
+    }
+
+    .hero-soft {
+      margin: 1.4rem 0 2.2rem;
+      padding: 1.4rem 1.3rem;
+      border-radius: 1.2rem;
+      border: 1px solid var(--border-soft);
+      background:
+        radial-gradient(circle at top left, rgba(248, 113, 22, 0.18), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.08), transparent 60%),
+        #020617;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
+      margin-bottom: 0.4rem;
+    }
+    .hero-soft p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 44rem;
+    }
+
+    .section {
+      margin-bottom: 2.1rem;
+    }
+    .section-head {
+      margin-bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .section-title {
+      font-size: 1.25rem;
+    }
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.95rem 1rem;
+      font-size: 0.86rem;
+    }
+    .card h2,
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+    .card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .card li {
+      display: flex;
+      gap: 0.28rem;
+      margin-bottom: 0.2rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .card li span.icon {
+      color: var(--accent);
+      margin-top: 0.06rem;
+      font-size: 0.82rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+    .pill {
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .timeline {
+      border-left: 1px solid var(--border);
+      padding-left: 0.9rem;
+      margin-top: 0.4rem;
+    }
+    .timeline-item {
+      margin-bottom: 0.6rem;
+    }
+    .timeline-year {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.08rem;
+    }
+    .timeline-title {
+      font-size: 0.9rem;
+      margin-bottom: 0.15rem;
+    }
+    .timeline-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      margin-top: 0.35rem;
+    }
+    .badge {
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: #020617;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 0.9rem;
+      margin-top: 0.6rem;
+    }
+    @media (max-width: 900px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .value-card {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.8rem 0.8rem 0.75rem;
+      background: rgba(15,23,42,0.85);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .value-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+    }
+    .stat {
+      min-width: 7rem;
+    }
+    .stat-number {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .contact-cta {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.9rem 0.9rem;
+      background: linear-gradient(135deg, rgba(248,113,22,0.14), rgba(15,23,42,0.95));
+      font-size: 0.9rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 0.9rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .contact-cta {
+        grid-template-columns: 1fr;
+      }
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-top: 0.6rem;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      gap: 0.35rem;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(248,113,22,0.45);
+    }
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.65rem 1.3rem;
+      font-size: 0.86rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.85);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .contact-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.3rem 1.25rem 2.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: var(--muted);
+    }
+
+    .mobile-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.55rem 0.9rem;
+      background: #020617;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      z-index: 40;
+    }
+    .mobile-bar-text {
+      color: var(--muted);
+    }
+    .mobile-bar-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      border: none;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    @media (min-width: 801px) {
+      .mobile-bar { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-name">Your Company Plumbing</div>
+      <div class="brand-tag">Plumbing • Heating • Emergency call-outs</div>
+    </div>
+    <nav>
+      <a href="index.html#top">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:01234567890" class="nav-cta">
+        <span>📞</span>
+        <span>01234&nbsp;567&nbsp;890</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INTRO -->
+    <section class="hero-soft">
+      <div class="eyebrow">About</div>
+      <h1>A straight-talking local plumber you can actually get hold of.</h1>
+      <p>
+        Your Company Plumbing is a small, local business based in Your Town. That means when
+        you call, you speak directly to the engineer who will turn up at your door – not a call
+        centre reading from a script.
+      </p>
+    </section>
+
+    <!-- STORY & CREDENTIALS -->
+    <section class="section">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Our story in a nutshell.</h2>
+          <p>
+            After years working for larger companies, we saw the same problems again and again:
+            missed appointments, vague pricing and homes left in a state. Your Company Plumbing
+            was started to do things differently.
+          </p>
+          <p>
+            Today we focus on homes and small businesses in Your Town and nearby villages. We keep
+            our diary tight, turn up when we say we will and treat every property as if it was our own.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">2015</div>
+              <div class="timeline-title">First vans on the road</div>
+              <div class="timeline-text">
+                Started serving local homeowners with boiler repairs and small plumbing jobs.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2018</div>
+              <div class="timeline-title">Trusted by landlords</div>
+              <div class="timeline-text">
+                Began looking after rental portfolios with safety checks and responsive repairs.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">Today</div>
+              <div class="timeline-title">Local, personal service</div>
+              <div class="timeline-text">
+                Still small enough to know our customers by name – big enough to handle full refits.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Qualifications, insurance & standards.</h2>
+          <p>
+            Plumbing and heating work needs to be done properly. We’re committed to safe,
+            compliant workmanship on every job – no shortcuts, no guesswork.
+          </p>
+          <ul>
+            <li><span class="icon">✔</span><span>Fully insured for work in homes and small businesses.</span></li>
+            <li><span class="icon">✔</span><span>Gas work carried out by a registered engineer.</span></li>
+            <li><span class="icon">✔</span><span>Clear paperwork and certificates where required.</span></li>
+            <li><span class="icon">✔</span><span>Waste and old parts disposed of responsibly.</span></li>
+          </ul>
+
+          <div class="badge-row">
+            <span class="badge">Public liability insurance</span>
+            <span class="badge">Gas Safe–registered engineer (where applicable)</span>
+            <span class="badge">Health & safety aware</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- VALUES & STATS -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-title">What you can expect on every visit.</div>
+        </div>
+        <div class="section-sub">
+          Our aim is to be the plumber you recommend to friends and family – the one you save in
+          your phone and call first when something goes wrong.
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-title">Honest communication</div>
+          <p>
+            We explain things in plain English, keep you updated if plans change and never
+            start extra work without your say-so.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-title">Respect for your home</div>
+          <p>
+            Dust sheets, shoe covers and tidy working areas as standard. We aim to leave your
+            property as clean as we found it – or better.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-title">Workmanship guarantee</div>
+          <p>
+            If something isn’t right with our workmanship, we’ll come back and put it right.
+            Simple as that.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-number">1,200+</div>
+          <div class="stat-label">Local jobs completed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">4.9 ★</div>
+          <div class="stat-label">Average customer rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Emergency line (where available)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-title">Why local homeowners keep our number saved.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p>
+          There are plenty of plumbers to choose from. Here’s what customers tell us they value
+          about working with us:
+        </p>
+        <ul style="margin-top:0.55rem;">
+          <li><span class="icon">✔</span><span><strong>Direct contact:</strong> You speak to the engineer, not a call centre.</span></li>
+          <li><span class="icon">✔</span><span><strong>Realistic timings:</strong> We’d rather be honest about when we can get there than overpromise and arrive late.</span></li>
+          <li><span class="icon">✔</span><span><strong>Clear pricing:</strong> Guide prices upfront, options where available and no surprise extras at the end.</span></li>
+          <li><span class="icon">✔</span><span><strong>Aftercare:</strong> Advice on how to look after your system and reduce the chances of the same problem coming back.</span></li>
+        </ul>
+
+        <div class="pill-row">
+          <span class="pill">Local & independent</span>
+          <span class="pill">Homeowner & landlord friendly</span>
+          <span class="pill">Respectful, tidy engineers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="section" id="contact">
+      <div class="contact-cta">
+        <div>
+          <h2 style="margin-bottom:0.25rem;">Need a reliable plumber in Your Town?</h2>
+          <p>
+            If you like the sound of how we work, the next step is simple: get in touch. Call for
+            urgent issues, or send a quick message with photos for planned jobs and we’ll take it
+            from there.
+          </p>
+          <div class="hero-ctas">
+            <a href="tel:01234567890" class="btn-primary">
+              <span>📞</span>
+              <span>01234&nbsp;567&nbsp;890</span>
+            </a>
+            <a href="contact.html" class="btn-secondary">
+              <span>📝</span>
+              <span>Message for a quote</span>
+            </a>
+          </div>
+          <div class="contact-meta">
+            Typical working hours: Mon–Fri 8am–6pm with emergency cover available where possible.
+          </div>
+        </div>
+        <div>
+          <p class="contact-meta" style="margin-top:0;">
+            Include your postcode, a short description of the problem and any photos you have.
+            The more information we get upfront, the faster we can help.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Your Company Plumbing. All rights reserved.</div>
+    <div>
+      <a href="/legal.html">Legal</a>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <div class="mobile-bar-text">Save our number for next time you need a plumber.</div>
+    <a href="tel:01234567890" class="mobile-bar-btn">Call plumber</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
