@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer Reviews | Your Company Electrical in Your Town</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="See what customers say about Your Company Electrical – reliable local electrician in Your Town with 5-star reviews from homeowners and landlords." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020617;
+      --bg-soft: #030712;
+      --card: #020617;
+      --border: #1f2937;
+      --border-soft: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --accent-deep: #16a34a;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4.5rem;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 1.1rem 1.25rem 0.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    .brand-tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a { color: var(--muted); }
+    nav a:hover { color: var(--text); }
+    .nav-cta {
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.5rem 1.25rem 3rem;
+      font-size: 0.9rem;
+    }
+
+    .page-hero {
+      padding: 1.4rem 1.3rem;
+      border-radius: 1.3rem;
+      border: 1px solid var(--border-soft);
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.25), transparent 55%),
+        #020617;
+      margin-bottom: 2rem;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+      margin-bottom: 0.3rem;
+    }
+    .page-hero p {
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background: var(--card);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 0.8rem 0.9rem;
+      min-width: 11rem;
+      flex: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .stat-value {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .stat-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 900px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+    .review-card {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.9);
+      padding: 0.9rem 0.9rem 0.85rem;
+      font-size: 0.86rem;
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+    .review-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .review-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .stars {
+      color: #facc15;
+      font-size: 0.9rem;
+    }
+    .review-text {
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+      font-size: 0.84rem;
+    }
+
+    .faq-section {
+      margin-bottom: 2rem;
+    }
+    .faq-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0.9rem;
+    }
+    @media (max-width: 800px) {
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    .faq-item {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.8rem 0.8rem 0.75rem;
+      background: rgba(15,23,42,0.7);
+      font-size: 0.84rem;
+    }
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .faq-a {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .cta-box {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 1rem 0.9rem 0.9rem;
+      background: linear-gradient(135deg, rgba(34,197,94,0.14), rgba(15,23,42,0.95));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    .cta-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      gap: 0.35rem;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(34,197,94,0.45);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.65rem 1.3rem;
+      font-size: 0.86rem;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.85);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.3rem 1.25rem 2.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--muted); }
+
+    .mobile-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.55rem 0.9rem;
+      background: #020617;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      z-index: 40;
+    }
+    .mobile-bar-text { color: var(--muted); }
+    .mobile-bar-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      border-radius: 999px;
+      border: none;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    @media (min-width: 801px) { .mobile-bar { display: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-name">Your Company Electrical</div>
+      <div class="brand-tag">Local electrician for homes & small businesses</div>
+    </div>
+    <nav>
+      <a href="index.html#top">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:01234567890" class="nav-cta">
+        <span>📞</span><span>01234&nbsp;567&nbsp;890</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="eyebrow">Reviews</div>
+      <h1>What customers in Your Town say about our work.</h1>
+      <p>Real feedback from homeowners, landlords and small businesses that use Your Company Electrical for their day-to-day electrical work.</p>
+    </section>
+
+    <section class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Average rating</div>
+        <div class="stat-value">4.9 ★</div>
+        <div class="stat-sub">Across Google and direct feedback forms.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Repeat customers</div>
+        <div class="stat-value">70%</div>
+        <div class="stat-sub">Most new jobs are for existing clients or their friends.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Jobs completed</div>
+        <div class="stat-value">1,000+</div>
+        <div class="stat-sub">Domestic & light commercial projects in the local area.</div>
+      </div>
+    </section>
+
+    <section class="reviews-grid">
+      <article class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Emma R – Your Town</div>
+            <div class="review-meta">Consumer unit upgrade</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-text">
+          “Explained the options clearly, arrived on time and kept us updated throughout the day.
+          The new board is neat and we feel much safer now. Would definitely recommend.”
+        </p>
+        <div class="review-meta">Verified Google review</div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Martin P – Landlord</div>
+            <div class="review-meta">EICR & remedial works</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-text">
+          “Carries out inspections on my rental properties and deals directly with my tenants.
+          Reports are clear, prices are fair and everything is handled professionally.”
+        </p>
+        <div class="review-meta">Repeat customer</div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Local salon owner</div>
+            <div class="review-meta">Lighting & extra sockets</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-text">
+          “Fitted new lighting throughout the salon and added extra sockets for our stations.
+          Worked around our opening hours which made life much easier.”
+        </p>
+        <div class="review-meta">Small business client</div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="review-name">James T – Your Town</div>
+            <div class="review-meta">Fault finding</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-text">
+          “We’d had issues with a circuit tripping for months. Found the fault quickly, explained
+          what had happened and fixed it with minimal disruption.”
+        </p>
+        <div class="review-meta">Same-day call-out</div>
+      </article>
+    </section>
+
+    <section class="faq-section">
+      <h2 class="faq-title">What people usually want to know before booking.</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q">Can I see proof of qualifications and insurance?</div>
+          <div class="faq-a">Yes. Certificates and insurance details are available on request and can be shown on arrival.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you guarantee your work?</div>
+          <div class="faq-a">All workmanship is guaranteed. If something isn’t right after we’ve attended, we’ll come back and investigate.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do I leave a review?</div>
+          <div class="faq-a">You can leave a review on Google or send feedback directly and we’ll add it to our records.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you cover my area?</div>
+          <div class="faq-a">We’re based in Your Town and cover surrounding areas. Call us and we’ll confirm straight away.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta-box">
+        <div>
+          <h2 style="margin-bottom:0.3rem;">Ready to see why customers rate us so highly?</h2>
+          <p>Call now or send a quick message with what you need. We’ll reply with honest advice and clear next steps.</p>
+          <div class="cta-meta">No pressure, no jargon – just a straightforward chat about your electrical job.</div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
+          <a href="tel:01234567890" class="btn-primary">
+            <span>⚡</span><span>Call 01234&nbsp;567&nbsp;890</span>
+          </a>
+          <a href="contact.html" class="btn-secondary">
+            <span>📝</span><span>Message for a quote</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Your Company Electrical. All rights reserved.</div>
+    <div><a href="/legal.html">Legal</a></div>
+  </footer>
+
+  <div class="mobile-bar">
+    <div class="mobile-bar-text">Need an electrician you can trust? Tap to call now.</div>
+    <a href="tel:01234567890" class="mobile-bar-btn">Call electrician</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
