@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About Your Company Electrical | Local Electrician in Your Town</title>
+  <title>About Your Company Plumbing | Local Plumber in Your Town</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Learn about Your Company Electrical – your local, qualified electrician in Your Town. Friendly, reliable and focused on safe, neat work every time." />
+  <meta name="description" content="Learn more about Your Company Plumbing – a local, owner-run plumbing and heating company serving Your Town and surrounding areas." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -15,8 +15,9 @@
       --border-soft: #111827;
       --text: #e5e7eb;
       --muted: #9ca3af;
-      --accent: #22c55e;
-      --accent-deep: #16a34a;
+      --accent: #f97316;
+      --accent-soft: rgba(248,113,22,0.08);
+      --accent-border: rgba(248,113,22,0.35);
     }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -80,147 +81,175 @@
       padding: 0.5rem 1.25rem 3rem;
     }
 
-    .page-hero {
-      padding: 1.4rem 1.3rem;
+    /* HERO BANNER */
+    .about-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 1.4rem;
+      padding: 1.6rem 1.4rem 1.5rem;
       border-radius: 1.3rem;
       border: 1px solid var(--border-soft);
       background:
-        radial-gradient(circle at top left, rgba(34, 197, 94, 0.25), transparent 55%),
+        radial-gradient(circle at top left, rgba(248, 113, 22, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.08), transparent 55%),
         #020617;
       margin-bottom: 2rem;
+      align-items: stretch;
     }
-    .page-hero h1 {
-      font-size: clamp(1.7rem, 2.6vw, 2.1rem);
-      margin-bottom: 0.4rem;
+    @media (max-width: 900px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+      }
     }
-    .page-hero p {
-      font-size: 0.98rem;
-      color: var(--muted);
-      max-width: 40rem;
-    }
-    .eyebrow {
+    .about-hero-copy .eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.16em;
       font-size: 0.78rem;
       color: var(--muted);
       margin-bottom: 0.3rem;
     }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
-      gap: 1.2rem;
-      margin-bottom: 2rem;
-      font-size: 0.9rem;
+    .about-hero-copy h1 {
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      margin-bottom: 0.4rem;
     }
-    @media (max-width: 900px) {
-      .two-col { grid-template-columns: 1fr; }
+    .about-hero-copy p {
+      font-size: 0.96rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
     }
-    .two-col p { color: var(--muted); }
-
-    .badge-row {
+    .about-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.7rem;
+      gap: 0.35rem;
+      margin-bottom: 0.7rem;
     }
-    .badge {
-      padding: 0.25rem 0.7rem;
+    .tag-pill {
+      padding: 0.18rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--accent-border);
+      background: var(--accent-soft);
       font-size: 0.72rem;
+      color: #fed7aa;
+    }
+    .about-meta {
+      font-size: 0.8rem;
       color: var(--muted);
-      background: rgba(15,23,42,0.85);
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 1rem;
+    .about-hero-image {
+      position: relative;
+      border-radius: 1.1rem;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      background: #020617;
+    }
+    .about-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.15);
+    }
+    .about-hero-badge {
+      position: absolute;
+      bottom: 0.85rem;
+      left: 0.9rem;
+      right: 0.9rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.9rem;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.35);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.78rem;
+    }
+    .about-hero-badge strong { color: var(--text); }
+
+    /* CONTENT SECTIONS */
+    .section {
       margin-bottom: 2rem;
-      font-size: 0.85rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.1fr);
+      gap: 1.3rem;
     }
     @media (max-width: 900px) {
-      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
     }
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
     .card {
       background: var(--card);
       border-radius: 1rem;
       border: 1px solid var(--border);
-      padding: 1rem 0.95rem 1rem;
+      padding: 1rem 1rem 0.9rem;
+      font-size: 0.86rem;
+      margin-bottom: 0.7rem;
     }
-    .card h2 {
-      font-size: 1rem;
+    .card h3 {
+      font-size: 0.95rem;
       margin-bottom: 0.25rem;
     }
-    .card p {
-      font-size: 0.84rem;
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+    .pill {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px dashed var(--border);
+      font-size: 0.72rem;
       color: var(--muted);
     }
 
     .list-check {
       list-style: none;
       padding-left: 0;
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-top: 0.4rem;
+      margin-top: 0.35rem;
     }
     .list-check li {
       display: flex;
-      gap: 0.35rem;
-      margin-bottom: 0.25rem;
+      gap: 0.3rem;
+      margin-bottom: 0.22rem;
+      font-size: 0.82rem;
+      color: var(--muted);
     }
     .list-check span.icon {
       color: var(--accent);
-      font-size: 0.86rem;
       margin-top: 0.05rem;
     }
 
-    .cta-box {
+    /* APPROACH STRIP */
+    .approach-strip {
       border-radius: 1rem;
       border: 1px solid var(--border);
-      padding: 1rem 0.9rem 0.9rem;
-      background: linear-gradient(135deg, rgba(34,197,94,0.14), rgba(15,23,42,0.95));
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      background: linear-gradient(135deg, rgba(248,113,22,0.12), rgba(15,23,42,0.98));
+      padding: 1rem 1rem 0.9rem;
+      font-size: 0.85rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
       gap: 0.8rem;
       align-items: center;
-      font-size: 0.9rem;
     }
-    .cta-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: #fff;
-      border-radius: 999px;
-      padding: 0.7rem 1.5rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-flex;
-      gap: 0.35rem;
-      align-items: center;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 16px 40px rgba(34,197,94,0.45);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .btn-secondary {
-      border-radius: 999px;
-      padding: 0.65rem 1.3rem;
-      font-size: 0.86rem;
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.85);
-      color: var(--text);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      text-decoration: none;
-      white-space: nowrap;
+    @media (max-width: 900px) {
+      .approach-strip {
+        grid-template-columns: 1fr;
+      }
     }
 
     footer {
@@ -237,174 +266,152 @@
     }
     footer a { color: var(--muted); }
 
-    .mobile-bar {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0.55rem 0.9rem;
-      background: #020617;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.8rem;
-      z-index: 40;
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        justify-content: flex-start;
+      }
     }
-    .mobile-bar-text { color: var(--muted); }
-    .mobile-bar-btn {
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: #fff;
-      border-radius: 999px;
-      border: none;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      white-space: nowrap;
-      text-decoration: none;
-    }
-    @media (min-width: 801px) { .mobile-bar { display: none; } }
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="brand-name">Your Company Electrical</div>
-      <div class="brand-tag">Local electrician for homes & small businesses</div>
-    </div>
-    <nav>
-      <a href="index.html#top">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html">Contact</a>
-      <a href="tel:01234567890" class="nav-cta">
-        <span>📞</span>
-        <span>01234&nbsp;567&nbsp;890</span>
-      </a>
-    </nav>
-  </header>
+<header>
+  <div class="brand">
+    <div class="brand-name">Your Company Plumbing</div>
+    <div class="brand-tag">Plumbing • Heating • Emergency call-outs</div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:01234567890" class="nav-cta">
+      <span>📞</span><span>01234&nbsp;567&nbsp;890</span>
+    </a>
+  </nav>
+</header>
 
-  <main>
-    <section class="page-hero">
+<main>
+  <!-- HERO WITH IMAGE -->
+  <section class="about-hero">
+    <div class="about-hero-copy">
       <div class="eyebrow">About</div>
-      <h1>Your local electrician who treats every job like it’s their own home.</h1>
+      <h1>Your local plumbing company that treats every job like it’s our own home.</h1>
       <p>
-        Your Company Electrical is a small, owner-run business based in Your Town.
-        That means you deal with the same person from the first call to the final handover.
+        Your Company Plumbing is a small, owner-run business based in Your Town. That means you
+        deal with the same person from first call to final clean-up — no call centres, no confusion.
       </p>
-    </section>
-
-    <section class="two-col">
-      <div>
-        <h2 style="margin-bottom:0.3rem;">How it started</h2>
-        <p>
-          After years working for larger contractors, we set up Your Company Electrical to do
-          things differently – fewer rushed jobs, more time spent doing work properly.
-          Most of our work now comes from repeat customers and word of mouth.
-        </p>
-        <p style="margin-top:0.6rem;">
-          We focus on domestic and light commercial work in Your Town and nearby areas:
-          fault finding, upgrades, small projects and emergency call-outs when things go wrong.
-        </p>
+      <div class="about-tags">
+        <span class="tag-pill">Owner-operated</span>
+        <span class="tag-pill">Domestic & light commercial</span>
+        <span class="tag-pill">Boilers • Bathrooms • Emergencies</span>
       </div>
-      <div>
-        <h2 style="margin-bottom:0.3rem;">Qualifications & standards</h2>
-        <p>
-          Safety is non-negotiable. All work is carried out in line with the latest wiring
-          regulations and manufacturer guidance.
-        </p>
-        <div class="badge-row">
-          <span class="badge">Qualified electrician</span>
-          <span class="badge">BS 7671 compliant</span>
-          <span class="badge">Fully insured</span>
-          <span class="badge">Certificates provided</span>
+      <div class="about-meta">
+        We focus on straightforward communication, neat workmanship and turning up when we say we will.
+        Most of our work comes from repeat customers and word of mouth.
+      </div>
+    </div>
+    <div class="about-hero-image">
+      <!-- Stock image – easy to swap for client photo later -->
+      <img src="https://images.pexels.com/photos/5854186/pexels-photo-5854186.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Plumber working on pipes in a clean modern home" />
+      <div class="about-hero-badge">
+        <div>
+          <strong>Local engineer, not a franchise.</strong>
+          <div style="color:var(--muted);">Covering Your Town and nearby areas with fast response times.</div>
+        </div>
+        <div style="text-align:right;font-size:0.78rem;">
+          <div><strong>10+ years</strong> experience</div>
+          <div>4.9★ average rating</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="grid-3">
-      <article class="card">
-        <h2>Straightforward communication</h2>
-        <p>
-          You’ll always know who is turning up, when they’ll arrive and what they’re doing.
-          If something changes, we’ll tell you before we touch a single cable.
-        </p>
-      </article>
-      <article class="card">
-        <h2>Neat workmanship</h2>
-        <p>
-          We protect floors and surfaces, tidy as we go and leave things how we found them –
-          just safer and working properly.
-        </p>
-      </article>
-      <article class="card">
-        <h2>Aftercare & support</h2>
-        <p>
-          Once the job is done you’re not on your own. If you have questions or something
-          doesn’t feel right, we’re at the end of the phone.
-        </p>
-      </article>
-    </section>
-
-    <section class="two-col">
+  <!-- STORY & VALUES -->
+  <section class="section">
+    <div class="grid-2">
       <div>
-        <h2 style="margin-bottom:0.35rem;">Our typical customers</h2>
-        <ul class="list-check">
-          <li><span class="icon">✔</span><span>Homeowners who want safe, tidy electrics.</span></li>
-          <li><span class="icon">✔</span><span>Landlords needing reliable testing and repairs.</span></li>
-          <li><span class="icon">✔</span><span>Small shops, salons and offices.</span></li>
-          <li><span class="icon">✔</span><span>Builders needing a dependable electrician on projects.</span></li>
-        </ul>
+        <h2 class="section-title">How it all started</h2>
+        <p class="section-sub">
+          After years working for larger firms, we set up Your Company Plumbing to do things differently:
+          fewer rushed jobs, more time spent doing proper work and treating every customer like a neighbour.
+        </p>
+        <p class="section-sub">
+          Today we look after homes and small businesses across Your Town and surrounding villages – boilers,
+          leaks, bathroom upgrades and the day-to-day plumbing jobs that need sorting quickly but carefully.
+        </p>
       </div>
       <div>
-        <h2 style="margin-bottom:0.35rem;">How we work on your job</h2>
-        <ul class="list-check">
-          <li><span class="icon">✔</span><span>Agree the brief, access and budget before starting.</span></li>
-          <li><span class="icon">✔</span><span>Keep you updated if we uncover anything unexpected.</span></li>
-          <li><span class="icon">✔</span><span>Test everything thoroughly before we leave.</span></li>
-          <li><span class="icon">✔</span><span>Provide certificates and paperwork where needed.</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <div class="cta-box">
-        <div>
-          <h2 style="margin-bottom:0.3rem;">Thinking about using us for your next job?</h2>
-          <p>
-            Get in touch for a friendly chat. We’ll let you know if we’re the right fit and
-            give you clear next steps – no pressure.
+        <div class="card">
+          <h3>Qualifications & standards</h3>
+          <p style="color:var(--muted);font-size:0.83rem;">
+            Safety, reliability and neat workmanship are non-negotiable. We follow manufacturer guidance and current
+            regulations on every job.
           </p>
-          <div class="cta-meta">
-            Perfect for planning rewires, extensions, consumer unit upgrades and lighting projects.
+          <div class="pill-row">
+            <span class="pill">Qualified & experienced engineer</span>
+            <span class="pill">Fully insured</span>
+            <span class="pill">Workmanship guaranteed</span>
           </div>
         </div>
-        <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
-          <a href="tel:01234567890" class="btn-primary">
-            <span>⚡</span><span>Call 01234&nbsp;567&nbsp;890</span>
-          </a>
-          <a href="contact.html" class="btn-secondary">
-            <span>📝</span><span>Message for advice</span>
-          </a>
-        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <div>© <span id="year"></span> Your Company Electrical. All rights reserved.</div>
-    <div><a href="/legal.html">Legal</a></div>
-  </footer>
+  <!-- APPROACH & WHO WE HELP -->
+  <section class="section">
+    <div class="grid-2">
+      <div>
+        <h2 class="section-title">Clear, respectful and tidy on every job.</h2>
+        <ul class="list-check">
+          <li><span class="icon">✔</span><span>You always know who is turning up, when and what’s happening next.</span></li>
+          <li><span class="icon">✔</span><span>We protect floors and surfaces and leave things as clean as we found them.</span></li>
+          <li><span class="icon">✔</span><span>All options are explained clearly before work starts.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">A good fit for busy homes & small businesses.</h2>
+        <ul class="list-check">
+          <li><span class="icon">✔</span><span>Homeowners wanting jobs done properly, not just quickly.</span></li>
+          <li><span class="icon">✔</span><span>Landlords needing a reliable go-to plumber for their properties.</span></li>
+          <li><span class="icon">✔</span><span>Shops, salons and small offices that can’t afford long downtime.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <div class="mobile-bar">
-    <div class="mobile-bar-text">Questions about a job? Tap to call now.</div>
-    <a href="tel:01234567890" class="mobile-bar-btn">Call electrician</a>
-  </div>
+  <!-- APPROACH STRIP -->
+  <section class="section">
+    <div class="approach-strip">
+      <div>
+        <h2 class="section-title">No drama. No cutting corners. No surprises.</h2>
+        <p class="section-sub">
+          We agree the brief, access and budget before starting. You’re kept updated if we uncover anything unexpected
+          and you’ll always see the work before we pack away.
+        </p>
+      </div>
+      <div>
+        <ul class="list-check">
+          <li><span class="icon">✔</span><span>Up-front pricing and clear paperwork.</span></li>
+          <li><span class="icon">✔</span><span>Thorough testing before we leave.</span></li>
+          <li><span class="icon">✔</span><span>Friendly aftercare if you have questions later.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<footer>
+  <div>© <span id="year"></span> Your Company Plumbing. All rights reserved.</div>
+  <div><a href="/legal.html">Legal</a></div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
