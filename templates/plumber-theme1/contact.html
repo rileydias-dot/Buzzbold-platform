@@ -2,424 +2,337 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact Your Company Plumbing | Plumber in Your Town</title>
+  <title>Contact Your Company Plumbing | Book a Local Plumber</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Contact Your Company Plumbing in Your Town for boiler repairs, leaks, bathrooms, emergencies and plumbing quotes. Call 01234 567 890 or send a quick message." />
+  <meta
+    name="description"
+    content="Contact Your Company Plumbing in Your Town to book a local plumber. Call, email or send a quick message for prices and availability."
+  />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #020617;
-      --bg-soft: #030712;
-      --card: #020617;
-      --border: #1f2937;
-      --border-soft: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
+      --bg: #f3f4f6;
+      --bg-soft: #ffffff;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
       --accent: #f97316;
-      --accent-deep: #ea580c;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
-      color: var(--text);
+      background: radial-gradient(circle at top, #dbeafe 0, #f3f4f6 42%, #e5e7eb 100%);
+      color: var(--text-main);
       line-height: 1.6;
       padding-bottom: 4.5rem;
     }
     a { color: inherit; text-decoration: none; }
-
-    header {
-      padding: 1.1rem 1.25rem 0.75rem;
-      max-width: 1100px;
+    .page {
+      max-width: 1120px;
       margin: 0 auto;
+      padding: 0.75rem 1.25rem 3.5rem;
+    }
+    header {
+      padding: 0.6rem 0 0.4rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
     }
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
+    .brand { display:flex; align-items:center; gap:0.65rem; }
+    .brand-logo {
+      width:38px; height:38px; border-radius:999px;
+      background:radial-gradient(circle at 30% 20%,#93c5fd,#2563eb 65%,#1d4ed8 100%);
+      display:flex; align-items:center; justify-content:center;
+      color:#eff6ff; font-weight:800; font-size:0.9rem;
+      box-shadow:0 12px 25px rgba(37,99,235,0.35);
     }
-    .brand-name {
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      color: var(--accent);
+    .brand-text-main {
+      font-weight:700; font-size:1rem;
+      letter-spacing:0.03em; text-transform:uppercase; color:#0f172a;
     }
-    .brand-tag {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+    .brand-text-sub { font-size:0.78rem; color:var(--text-muted); }
     nav {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      display:flex; gap:1.2rem; font-size:0.9rem;
+      align-items:center; flex-wrap:wrap; justify-content:flex-end;
     }
-    nav a {
-      color: var(--muted);
-    }
-    nav a:hover {
-      color: var(--text);
-    }
+    nav a { color:var(--text-muted); }
+    nav a:hover { color:var(--text-main); }
     .nav-cta {
-      background: rgba(15,23,42,0.95);
-      border-radius: 999px;
-      padding: 0.45rem 0.9rem;
-      border: 1px solid var(--border);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.8rem;
-      color: var(--text);
+      display:inline-flex; align-items:center; gap:0.35rem;
+      padding:0.45rem 0.95rem; border-radius:999px;
+      background:#ffffff; border:1px solid #bfdbfe;
+      box-shadow:0 8px 20px rgba(37,99,235,0.15);
+      font-size:0.82rem; color:var(--primary-dark); font-weight:600;
     }
 
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.5rem 1.25rem 3rem;
-    }
-
-    .hero-soft {
-      margin: 1.4rem 0 2.2rem;
-      padding: 1.4rem 1.3rem;
-      border-radius: 1.2rem;
-      border: 1px solid var(--border-soft);
-      background:
-        radial-gradient(circle at top left, rgba(248, 113, 22, 0.18), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.08), transparent 60%),
-        #020617;
+    main { margin-top:0.7rem; }
+    .page-hero {
+      border-radius:1.4rem;
+      background:linear-gradient(135deg,#eff6ff 0%,#ffffff 52%,#e5f2ff 100%);
+      box-shadow:var(--shadow-soft);
+      padding:1.4rem 1.5rem 1.3rem;
+      margin-bottom:1.8rem;
     }
     .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
+      text-transform:uppercase; letter-spacing:0.18em;
+      font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;
     }
     h1 {
-      font-size: clamp(1.9rem, 3vw, 2.3rem);
-      margin-bottom: 0.4rem;
+      font-size:clamp(1.8rem,2.5vw,2.2rem);
+      margin-bottom:0.4rem; color:#0f172a;
     }
-    .hero-soft p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      max-width: 44rem;
-    }
+    .page-sub { font-size:0.95rem; color:var(--text-muted); max-width:40rem; }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
-      gap: 1rem;
+    .layout {
+      display:grid;
+      grid-template-columns:minmax(0,1.6fr) minmax(0,1.2fr);
+      gap:1.2rem;
     }
-    @media (max-width: 900px) {
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width:900px){ .layout{ grid-template-columns:1fr; } }
 
     .card {
-      background: var(--card);
-      border-radius: 1rem;
-      border: 1px solid var(--border);
-      padding: 1rem 0.95rem 1rem;
-      font-size: 0.86rem;
-    }
-    .card h2 {
-      font-size: 1rem;
-      margin-bottom: 0.35rem;
-    }
-    .card p {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-bottom: 0.45rem;
+      border-radius:1rem; background:var(--bg-soft);
+      border:1px solid var(--border);
+      padding:1rem 0.95rem 1rem;
+      box-shadow:0 10px 25px rgba(15,23,42,0.03);
+      font-size:0.9rem;
     }
 
-    form {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.55rem;
-      margin-top: 0.3rem;
-    }
+    form { display:grid; gap:0.7rem; }
     label {
-      font-size: 0.8rem;
-      color: var(--muted);
-      display: block;
-      margin-bottom: 0.18rem;
+      font-size:0.8rem; color:var(--text-muted);
+      display:block; margin-bottom:0.15rem;
     }
-    input,
-    textarea,
-    select {
-      width: 100%;
-      padding: 0.55rem 0.6rem;
-      border-radius: 0.55rem;
-      border: 1px solid var(--border);
-      background: #020617;
-      color: var(--text);
-      font-size: 0.85rem;
+    input, textarea, select {
+      width:100%; background:#f9fafb;
+      border-radius:0.55rem; border:1px solid var(--border);
+      padding:0.6rem 0.65rem; font-size:0.88rem;
+      color:var(--text-main);
     }
-    textarea {
-      min-height: 90px;
-      resize: vertical;
+    textarea { min-height:120px; resize:vertical; }
+    input:focus, textarea:focus, select:focus {
+      outline:none; border-color:var(--primary);
+      box-shadow:0 0 0 1px rgba(37,99,235,0.35);
+      background:#ffffff;
     }
-    .small-hint {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 0.15rem;
+
+    .inline {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:0.6rem;
     }
+    @media (max-width:600px){ .inline{ grid-template-columns:1fr; } }
+
+    .hint { font-size:0.75rem; color:var(--text-muted); margin-top:0.1rem; }
 
     .btn-primary {
-      margin-top: 0.4rem;
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: #fff;
-      border-radius: 999px;
-      padding: 0.7rem 1.5rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-flex;
-      gap: 0.35rem;
-      align-items: center;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 16px 40px rgba(248,113,22,0.45);
+      display:inline-flex; align-items:center; gap:0.35rem;
+      padding:0.8rem 1.6rem; border-radius:999px; border:none;
+      cursor:pointer; background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#ffffff; font-size:0.9rem; font-weight:600;
+      box-shadow:0 18px 35px rgba(37,99,235,0.45);
+      justify-content:center;
     }
 
+    .contact-details h2 {
+      font-size:1.05rem; margin-bottom:0.3rem;
+    }
+    .contact-details p {
+      font-size:0.88rem; color:var(--text-muted);
+    }
     .details-list {
-      list-style: none;
-      padding-left: 0;
-      font-size: 0.84rem;
-      color: var(--muted);
+      list-style:none; padding-left:0; margin-top:0.6rem;
+      font-size:0.88rem;
     }
-    .details-list li {
-      margin-bottom: 0.25rem;
-    }
-    .highlight {
-      color: var(--text);
-      font-weight: 600;
-    }
+    .details-list li { margin-bottom:0.4rem; }
+    .details-list strong { color:#111827; }
 
-    .hours-card {
-      margin-top: 0.7rem;
-      padding-top: 0.7rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
+    .badge-row {
+      display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.7rem;
     }
-    .hours-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-
-    .map-placeholder {
-      margin-top: 0.7rem;
-      border-radius: 0.8rem;
-      border: 1px dashed var(--border);
-      padding: 0.6rem 0.7rem;
-      font-size: 0.78rem;
-      color: var(--muted);
+    .badge {
+      padding:0.22rem 0.7rem; border-radius:999px;
+      border:1px solid #d1d5db; background:#f9fafb;
+      font-size:0.75rem; color:#4b5563;
     }
 
     footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.3rem 1.25rem 2.2rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 0.7rem;
-      flex-wrap: wrap;
+      margin-top:2rem; padding-top:1.2rem;
+      border-top:1px solid #e5e7eb;
+      display:flex; flex-wrap:wrap; justify-content:space-between;
+      gap:0.6rem; font-size:0.78rem; color:#6b7280;
     }
-    footer a {
-      color: var(--muted);
-    }
+    footer a { color:#4b5563; }
 
     .mobile-bar {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0.55rem 0.9rem;
-      background: #020617;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.8rem;
-      z-index: 40;
+      position:fixed; left:0; right:0; bottom:0;
+      padding:0.55rem 0.9rem; background:#0f172a; color:#e5e7eb;
+      border-top:1px solid #111827;
+      display:flex; justify-content:space-between; align-items:center;
+      gap:0.7rem; font-size:0.8rem; z-index:40;
     }
-    .mobile-bar-text {
-      color: var(--muted);
-    }
+    .mobile-bar-text { color:#cbd5f5; }
     .mobile-bar-btn {
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: #fff;
-      border-radius: 999px;
-      border: none;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      white-space: nowrap;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      color:#ffffff; border-radius:999px; border:none;
+      padding:0.38rem 0.95rem; font-size:0.82rem; font-weight:600;
+      white-space:nowrap; text-decoration:none;
     }
-    @media (min-width: 801px) {
-      .mobile-bar { display: none; }
-    }
-
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        justify-content: flex-start;
-      }
+    @media (min-width:801px){ .mobile-bar{ display:none; } }
+    @media (max-width:640px){
+      header{ flex-direction:column; align-items:flex-start; }
+      nav{ justify-content:flex-start; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="brand-name">Your Company Plumbing</div>
-      <div class="brand-tag">Plumbing • Heating • Emergency call-outs</div>
-    </div>
-    <nav>
-      <a href="index.html#top">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html">Contact</a>
-      <a href="tel:01234567890" class="nav-cta">
-        <span>📞</span>
-        <span>01234&nbsp;567&nbsp;890</span>
-      </a>
-    </nav>
-  </header>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">PL</div>
+        <div>
+          <div class="brand-text-main">Your Company Plumbing</div>
+          <div class="brand-text-sub">Plumbing • Heating • 24/7 emergencies</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html#top">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:01234567890" class="nav-cta">
+          <span>📞</span><span>01234&nbsp;567&nbsp;890</span>
+        </a>
+      </nav>
+    </header>
 
-  <main>
-    <!-- INTRO -->
-    <section class="hero-soft">
-      <div class="eyebrow">Contact</div>
-      <h1>Contact Your Company Plumbing.</h1>
-      <p>
-        For emergencies, the fastest way to reach us is always by phone. For quotes and planned jobs,
-        send a message with a few details and we’ll come back with options.
-      </p>
-    </section>
-
-    <!-- GRID -->
-    <section class="grid-2">
-      <!-- FORM CARD -->
-      <article class="card">
-        <h2>Request a quote or call-back.</h2>
-        <p>Fill in this form and we’ll get back to you as soon as we can.</p>
-
-        <form>
-          <div>
-            <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your full name" />
-          </div>
-          <div>
-            <label for="phone">Phone number</label>
-            <input id="phone" type="text" placeholder="Best number to reach you" />
-          </div>
-          <div>
-            <label for="email">Email address (optional)</label>
-            <input id="email" type="email" placeholder="you@example.com" />
-          </div>
-          <div>
-            <label for="postcode">Postcode / area</label>
-            <input id="postcode" type="text" placeholder="e.g. AB1 2CD or Your Town" />
-          </div>
-          <div>
-            <label for="service">What do you need help with?</label>
-            <select id="service">
-              <option value="">Select an option…</option>
-              <option>Boiler issue</option>
-              <option>Leak or burst pipe</option>
-              <option>Bathroom work</option>
-              <option>Radiators / heating</option>
-              <option>Blocked toilet / sink</option>
-              <option>Landlord / rental property</option>
-              <option>Other plumbing job</option>
-            </select>
-          </div>
-          <div>
-            <label for="details">Tell us a bit about the problem.</label>
-            <textarea id="details" placeholder="Short description, when it started, any photos you can send etc."></textarea>
-            <div class="small-hint">
-              You can also send photos or videos after we reply – they help us diagnose faster.
-            </div>
-          </div>
-
-          <button type="button" class="btn-primary">
-            <span>📩</span>
-            <span>Send message (example only)</span>
-          </button>
-          <div class="small-hint">
-            This is a template form. Your web developer or marketing team can connect it to email or your CRM.
-          </div>
-        </form>
-      </article>
-
-      <!-- CONTACT DETAILS -->
-      <article class="card">
-        <h2>Call us directly.</h2>
-        <p>
-          For urgent issues like leaks, no heating or blocked toilets, please call so we can respond as quickly as possible.
+    <main>
+      <section class="page-hero">
+        <div class="eyebrow">Contact</div>
+        <h1>Tell us what you need help with.</h1>
+        <p class="page-sub">
+          Use the form, call or email and we’ll come back with availability and pricing. No pushy
+          sales chat – just straightforward advice from a local plumber.
         </p>
-        <ul class="details-list">
-          <li><span class="highlight">Phone:</span> 01234 567 890</li>
-          <li><span class="highlight">Area:</span> Your Town and surrounding villages</li>
-        </ul>
+      </section>
 
-        <div class="hours-card">
-          <strong>Typical working hours</strong>
-          <div class="hours-row">
-            <span>Mon–Fri</span>
-            <span>8:00am – 6:00pm</span>
-          </div>
-          <div class="hours-row">
-            <span>Sat</span>
-            <span>By arrangement</span>
-          </div>
-          <div class="hours-row">
-            <span>Emergency cover</span>
-            <span>Where possible, 24/7</span>
-          </div>
-          <p class="small-hint" style="margin-top:0.4rem;">
-            If we miss your call while on a job, we’ll call you back as soon as we’re free.
+      <section class="layout">
+        <article class="card">
+          <form>
+            <div class="inline">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" placeholder="Best number to reach you" />
+              </div>
+            </div>
+
+            <div class="inline">
+              <div>
+                <label for="email">Email (optional)</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label for="postcode">Postcode</label>
+                <input id="postcode" name="postcode" type="text" placeholder="e.g. AB1 2CD" />
+              </div>
+            </div>
+
+            <div>
+              <label for="job-type">What do you need?</label>
+              <select id="job-type" name="job-type">
+                <option value="">Select an option</option>
+                <option value="leak">Leak / burst pipe</option>
+                <option value="boiler">Boiler issue</option>
+                <option value="radiator">Radiators / heating</option>
+                <option value="bathroom">Bathroom / cloakroom</option>
+                <option value="hotwater">Hot water / cylinder</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">Tell us a bit about the job</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Short description plus any access issues, photos, or preferred times."
+              ></textarea>
+              <div class="hint">
+                Don’t worry about the wording – just describe what’s going on in your own words.
+              </div>
+            </div>
+
+            <div>
+              <label for="when">When are you available?</label>
+              <input
+                id="when"
+                name="when"
+                type="text"
+                placeholder="e.g. Weekdays after 5pm, Saturdays, ASAP for emergencies"
+              />
+            </div>
+
+            <button type="submit" class="btn-primary">
+              <span>📩</span><span>Send message</span>
+            </button>
+            <div class="hint">
+              This demo form can be wired up to your preferred email, CRM or BuzzBold client portal.
+            </div>
+          </form>
+        </article>
+
+        <aside class="card contact-details">
+          <h2>Other ways to get in touch</h2>
+          <p>
+            If it’s urgent, calling is always fastest. For planned work, email and photos help us
+            give a better estimate.
           </p>
-        </div>
 
-        <div class="map-placeholder">
-          <strong>Service area:</strong> Based in Your Town, typically covering nearby neighbourhoods,
-          villages and postcodes within a short driving distance. Your developer can embed a live map here.
-        </div>
-      </article>
-    </section>
-  </main>
+          <ul class="details-list">
+            <li><strong>Phone:</strong> <a href="tel:01234567890">01234 567 890</a></li>
+            <li><strong>Email:</strong> <a href="mailto:info@yourplumbing.co.uk">info@yourplumbing.co.uk</a></li>
+            <li><strong>Base:</strong> Your Town and surrounding areas</li>
+          </ul>
 
-  <footer>
-    <div>© <span id="year"></span> Your Company Plumbing. All rights reserved.</div>
-    <div>
-      <a href="/legal.html">Legal</a>
-    </div>
-  </footer>
+          <div class="badge-row">
+            <span class="badge">Emergency call-outs where possible</span>
+            <span class="badge">Evening & Saturday slots available</span>
+            <span class="badge">Fully insured & experienced</span>
+          </div>
+
+          <p style="margin-top:0.8rem; color:var(--text-muted); font-size:0.86rem;">
+            Typical working hours: <strong>Mon–Fri 8am–6pm</strong>.<br />
+            Emergency work outside these times is subject to availability and call-out charges.
+          </p>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Your Company Plumbing. All rights reserved.</div>
+      <div>
+        <a href="/legal.html">Legal</a>
+        &nbsp;·&nbsp;
+        <span>Site framework by BuzzBold Marketing</span>
+      </div>
+    </footer>
+  </div>
 
   <div class="mobile-bar">
-    <div class="mobile-bar-text">Burst pipe or no heating? Tap to call now.</div>
+    <div class="mobile-bar-text">Need a plumber now? Tap to call.</div>
     <a href="tel:01234567890" class="mobile-bar-btn">Call plumber</a>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
