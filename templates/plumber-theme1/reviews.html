@@ -2,515 +2,384 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Plumber Reviews in Your Town | Your Company Plumbing</title>
+  <title>Customer Reviews | Your Company Plumbing in Your Town</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Read reviews for Your Company Plumbing in Your Town. Trusted local plumber with 4.9 star rating from homeowners, landlords and small businesses." />
+  <meta
+    name="description"
+    content="See what customers in Your Town say about Your Company Plumbing. 5-star reviews from homeowners, landlords and small businesses."
+  />
   <style>
+    /* reuse same design system */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #020617;
-      --bg-soft: #030712;
-      --card: #020617;
-      --border: #1f2937;
-      --border-soft: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
+      --bg: #f3f4f6;
+      --bg-soft: #ffffff;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
       --accent: #f97316;
-      --accent-deep: #ea580c;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
-      color: var(--text);
+      background: radial-gradient(circle at top, #dbeafe 0, #f3f4f6 42%, #e5e7eb 100%);
+      color: var(--text-main);
       line-height: 1.6;
       padding-bottom: 4.5rem;
     }
     a { color: inherit; text-decoration: none; }
-
-    header {
-      padding: 1.1rem 1.25rem 0.75rem;
-      max-width: 1100px;
+    .page {
+      max-width: 1120px;
       margin: 0 auto;
+      padding: 0.75rem 1.25rem 3.5rem;
+    }
+    header {
+      padding: 0.6rem 0 0.4rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
     }
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
+    .brand { display:flex; align-items:center; gap:0.65rem; }
+    .brand-logo {
+      width:38px; height:38px; border-radius:999px;
+      background:radial-gradient(circle at 30% 20%,#93c5fd,#2563eb 65%,#1d4ed8 100%);
+      display:flex; align-items:center; justify-content:center;
+      color:#eff6ff; font-weight:800; font-size:0.9rem;
+      box-shadow:0 12px 25px rgba(37,99,235,0.35);
     }
-    .brand-name {
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      color: var(--accent);
+    .brand-text-main {
+      font-weight:700; font-size:1rem;
+      letter-spacing:0.03em; text-transform:uppercase; color:#0f172a;
     }
-    .brand-tag {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+    .brand-text-sub { font-size:0.78rem; color:var(--text-muted); }
     nav {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      display:flex; gap:1.2rem; font-size:0.9rem;
+      align-items:center; flex-wrap:wrap; justify-content:flex-end;
     }
-    nav a {
-      color: var(--muted);
-    }
-    nav a:hover {
-      color: var(--text);
-    }
+    nav a { color:var(--text-muted); }
+    nav a:hover { color:var(--text-main); }
     .nav-cta {
-      background: rgba(15,23,42,0.95);
-      border-radius: 999px;
-      padding: 0.45rem 0.9rem;
-      border: 1px solid var(--border);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.8rem;
-      color: var(--text);
+      display:inline-flex; align-items:center; gap:0.35rem;
+      padding:0.45rem 0.95rem; border-radius:999px;
+      background:#ffffff; border:1px solid #bfdbfe;
+      box-shadow:0 8px 20px rgba(37,99,235,0.15);
+      font-size:0.82rem; color:var(--primary-dark); font-weight:600;
     }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.5rem 1.25rem 3rem;
-    }
-
-    .hero-soft {
-      margin: 1.4rem 0 2.2rem;
-      padding: 1.4rem 1.3rem;
-      border-radius: 1.2rem;
-      border: 1px solid var(--border-soft);
-      background:
-        radial-gradient(circle at top left, rgba(248, 113, 22, 0.18), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.08), transparent 60%),
-        #020617;
+    main { margin-top:0.7rem; }
+    .page-hero {
+      border-radius:1.4rem;
+      background:linear-gradient(135deg,#eff6ff 0%,#ffffff 52%,#e5f2ff 100%);
+      box-shadow:var(--shadow-soft);
+      padding:1.4rem 1.5rem 1.3rem;
+      margin-bottom:1.8rem;
     }
     .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
+      text-transform:uppercase; letter-spacing:0.18em;
+      font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;
     }
     h1 {
-      font-size: clamp(1.9rem, 3vw, 2.3rem);
-      margin-bottom: 0.4rem;
+      font-size:clamp(1.8rem,2.5vw,2.2rem);
+      margin-bottom:0.4rem; color:#0f172a;
     }
-    .hero-soft p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      max-width: 44rem;
-    }
+    .page-sub { font-size:0.95rem; color:var(--text-muted); max-width:40rem; }
 
-    .section {
-      margin-bottom: 2.1rem;
+    .stats-row {
+      display:flex; flex-wrap:wrap; gap:0.9rem;
+      margin-bottom:1.6rem;
     }
-    .section-head {
-      margin-bottom: 0.8rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+    .stat-card {
+      flex:1; min-width:11rem;
+      border-radius:1rem; background:#ffffff;
+      border:1px solid var(--border);
+      padding:0.8rem 0.9rem;
+      box-shadow:0 10px 25px rgba(15,23,42,0.03);
+      font-size:0.86rem;
     }
-    .section-title {
-      font-size: 1.25rem;
-    }
-    .section-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 32rem;
-    }
+    .stat-label { font-size:0.8rem; color:var(--text-muted); margin-bottom:0.15rem; }
+    .stat-value { font-size:1.2rem; font-weight:600; }
+    .stat-sub { font-size:0.78rem; color:var(--text-muted); margin-top:0.18rem; }
 
     .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 0.9rem;
+      display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:1rem; margin-bottom:2rem;
     }
-    @media (max-width: 900px) {
-      .reviews-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width:900px){ .reviews-grid{ grid-template-columns:1fr; } }
     .review-card {
-      border-radius: 0.9rem;
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.9);
-      padding: 0.9rem 0.9rem 0.8rem;
-      font-size: 0.82rem;
+      border-radius:1rem; background:#0f172a;
+      color:#e5e7eb; padding:0.9rem 0.95rem 0.85rem;
+      box-shadow:0 16px 35px rgba(15,23,42,0.45);
+      font-size:0.86rem;
     }
     .review-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.2rem;
+      display:flex; justify-content:space-between;
+      gap:0.6rem; margin-bottom:0.25rem;
     }
-    .review-name {
-      font-weight: 600;
-      font-size: 0.86rem;
-    }
-    .stars {
-      color: #facc15;
-      font-size: 0.8rem;
-    }
-    .review-tag {
-      font-size: 0.76rem;
-      color: var(--muted);
-    }
-    .review-text {
-      color: var(--muted);
-      margin: 0.35rem 0 0.25rem;
-    }
-    .review-meta {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
+    .review-name { font-weight:600; font-size:0.9rem; }
+    .review-meta { font-size:0.75rem; color:#9ca3af; }
+    .review-stars { color:#facc15; font-size:0.9rem; white-space:nowrap; }
+    .review-text { margin-top:0.2rem; color:#cbd5f5; }
+    .review-source { margin-top:0.35rem; font-size:0.75rem; color:#9ca3af; }
 
-    .summary-card {
-      border-radius: 1rem;
-      border: 1px solid var(--border);
-      background: #020617;
-      padding: 1rem 0.95rem 1rem;
-      font-size: 0.86rem;
-      margin-top: 0.3rem;
+    .faq-section { margin-bottom:2rem; }
+    .faq-title { font-size:1.05rem; margin-bottom:0.5rem; }
+    .faq-grid {
+      display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:0.9rem;
     }
-    .summary-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 0.6rem;
+    @media (max-width:800px){ .faq-grid{ grid-template-columns:1fr; } }
+    .faq-item {
+      border-radius:0.9rem; border:1px solid #e5e7eb;
+      background:#ffffff; padding:0.8rem 0.8rem 0.75rem;
+      font-size:0.84rem;
     }
-    .summary-item {
-      min-width: 7rem;
-    }
-    .summary-number {
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-    .summary-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-    .source-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-      font-size: 0.78rem;
-    }
-    .source-pill {
-      padding: 0.18rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      background: #020617;
-    }
+    .faq-q { font-weight:600; margin-bottom:0.25rem; color:#111827; }
+    .faq-a { font-size:0.8rem; color:#6b7280; }
 
-    .contact-cta {
-      border-radius: 1rem;
-      border: 1px solid var(--border);
-      padding: 1rem 0.9rem 0.9rem;
-      background: linear-gradient(135deg, rgba(248,113,22,0.14), rgba(15,23,42,0.95));
-      font-size: 0.9rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
-      gap: 0.9rem;
-      align-items: center;
+    .cta-box {
+      border-radius:1.2rem; border:1px solid #dbeafe;
+      background:linear-gradient(135deg,#dbeafe,#eff6ff);
+      padding:1rem 1rem 0.95rem;
+      display:flex; flex-wrap:wrap; justify-content:space-between;
+      align-items:center; gap:0.8rem; font-size:0.9rem;
     }
-    @media (max-width: 900px) {
-      .contact-cta {
-        grid-template-columns: 1fr;
-      }
-    }
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
-      margin-top: 0.6rem;
+    .cta-meta {
+      margin-top:0.35rem; font-size:0.8rem; color:#4b5563;
     }
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: #fff;
-      border-radius: 999px;
-      padding: 0.7rem 1.5rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-flex;
-      gap: 0.35rem;
-      align-items: center;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 16px 40px rgba(248,113,22,0.45);
+      display:inline-flex; align-items:center; gap:0.35rem;
+      padding:0.8rem 1.6rem; border-radius:999px; border:none;
+      cursor:pointer; background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#ffffff; font-size:0.9rem; font-weight:600;
+      box-shadow:0 18px 35px rgba(37,99,235,0.45);
+      text-decoration:none; white-space:nowrap;
     }
     .btn-secondary {
-      border-radius: 999px;
-      padding: 0.65rem 1.3rem;
-      font-size: 0.86rem;
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.85);
-      color: var(--text);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-    .contact-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
+      display:inline-flex; align-items:center; gap:0.35rem;
+      padding:0.75rem 1.4rem; border-radius:999px;
+      border:1px solid #d1d5db; background:#ffffff;
+      color:#111827; font-size:0.9rem; font-weight:500;
+      text-decoration:none; white-space:nowrap;
     }
 
     footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.3rem 1.25rem 2.2rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 0.7rem;
-      flex-wrap: wrap;
+      margin-top:2rem; padding-top:1.2rem;
+      border-top:1px solid #e5e7eb;
+      display:flex; flex-wrap:wrap; justify-content:space-between;
+      gap:0.6rem; font-size:0.78rem; color:#6b7280;
     }
-    footer a {
-      color: var(--muted);
-    }
-
+    footer a { color:#4b5563; }
     .mobile-bar {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0.55rem 0.9rem;
-      background: #020617;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.8rem;
-      z-index: 40;
+      position:fixed; left:0; right:0; bottom:0;
+      padding:0.55rem 0.9rem; background:#0f172a; color:#e5e7eb;
+      border-top:1px solid #111827;
+      display:flex; justify-content:space-between; align-items:center;
+      gap:0.7rem; font-size:0.8rem; z-index:40;
     }
-    .mobile-bar-text {
-      color: var(--muted);
-    }
+    .mobile-bar-text { color:#cbd5f5; }
     .mobile-bar-btn {
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: #fff;
-      border-radius: 999px;
-      border: none;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      white-space: nowrap;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      color:#ffffff; border-radius:999px; border:none;
+      padding:0.38rem 0.95rem; font-size:0.82rem; font-weight:600;
+      white-space:nowrap; text-decoration:none;
     }
-    @media (min-width: 801px) {
-      .mobile-bar { display: none; }
-    }
-
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        justify-content: flex-start;
-      }
+    @media (min-width:801px){ .mobile-bar{ display:none; } }
+    @media (max-width:640px){
+      header{ flex-direction:column; align-items:flex-start; }
+      nav{ justify-content:flex-start; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="brand-name">Your Company Plumbing</div>
-      <div class="brand-tag">Plumbing • Heating • Emergency call-outs</div>
-    </div>
-    <nav>
-      <a href="index.html#top">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html">Contact</a>
-      <a href="tel:01234567890" class="nav-cta">
-        <span>📞</span>
-        <span>01234&nbsp;567&nbsp;890</span>
-      </a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- INTRO -->
-    <section class="hero-soft">
-      <div class="eyebrow">Reviews</div>
-      <h1>What local customers say about our plumbing work.</h1>
-      <p>
-        Most of our work comes from repeat customers and word-of-mouth. Here’s a snapshot of
-        what homeowners, landlords and small businesses say after we’ve finished the job.
-      </p>
-    </section>
-
-    <!-- SUMMARY -->
-    <section class="section">
-      <div class="section-head">
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">PL</div>
         <div>
-          <div class="section-title">At-a-glance.</div>
+          <div class="brand-text-main">Your Company Plumbing</div>
+          <div class="brand-text-sub">Plumbing • Heating • 24/7 emergencies</div>
         </div>
       </div>
+      <nav>
+        <a href="index.html#top">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:01234567890" class="nav-cta">
+          <span>📞</span><span>01234&nbsp;567&nbsp;890</span>
+        </a>
+      </nav>
+    </header>
 
-      <div class="summary-card">
-        <p>
-          We’re proud of the feedback we receive and work hard to keep our standards high on every visit.
+    <main>
+      <section class="page-hero">
+        <div class="eyebrow">Reviews</div>
+        <h1>What customers in Your Town say about our work.</h1>
+        <p class="page-sub">
+          Real feedback from homeowners, landlords and small businesses who trust us with their
+          plumbing and heating.
         </p>
-        <div class="summary-row">
-          <div class="summary-item">
-            <div class="summary-number">4.9 ★</div>
-            <div class="summary-label">Average rating</div>
-          </div>
-          <div class="summary-item">
-            <div class="summary-number">200+</div>
-            <div class="summary-label">Public reviews</div>
-          </div>
-          <div class="summary-item">
-            <div class="summary-number">1,200+</div>
-            <div class="summary-label">Jobs completed</div>
-          </div>
-        </div>
-        <div class="source-row">
-          <span class="source-pill">Google reviews</span>
-          <span class="source-pill">Direct customer feedback</span>
-          <span class="source-pill">Landlord testimonials</span>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- REVIEWS GRID -->
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <div class="section-title">Recent customer reviews.</div>
+      <section class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">Average rating</div>
+          <div class="stat-value">4.9 ★</div>
+          <div class="stat-sub">Across Google and direct feedback.</div>
         </div>
-        <div class="section-sub">
-          These are examples of the kind of feedback we receive. For live reviews, ask us for
-          a link to our profile.
+        <div class="stat-card">
+          <div class="stat-label">Repeat customers</div>
+          <div class="stat-value">70%</div>
+          <div class="stat-sub">Most new bookings are returning customers or referrals.</div>
         </div>
-      </div>
+        <div class="stat-card">
+          <div class="stat-label">Jobs completed</div>
+          <div class="stat-value">1,200+</div>
+          <div class="stat-sub">Local jobs completed in Your Town and nearby.</div>
+        </div>
+      </section>
 
-      <div class="reviews-grid">
+      <section class="reviews-grid">
         <article class="review-card">
           <div class="review-header">
             <div>
-              <div class="review-name">Sarah K – Your Town</div>
-              <div class="review-tag">Boiler repair</div>
+              <div class="review-name">Laura M – Your Town</div>
+              <div class="review-meta">Boiler breakdown</div>
             </div>
-            <div class="stars">★★★★★</div>
+            <div class="review-stars">★★★★★</div>
           </div>
           <div class="review-text">
-            “Arrived within the hour, found the problem in minutes and had the boiler running again
-            with no mess. Really friendly and explained everything in plain English.”
+            “Arrived when promised, quickly found the issue and had our heating back on the same
+            evening. Explained everything clearly and the price was exactly what we’d been told.”
           </div>
-          <div class="review-meta">Verified Google review</div>
+          <div class="review-source">Verified Google review</div>
         </article>
 
         <article class="review-card">
           <div class="review-header">
             <div>
-              <div class="review-name">Martin L – Landlord</div>
-              <div class="review-tag">Multiple rental properties</div>
+              <div class="review-name">James & Emma – Your Town</div>
+              <div class="review-meta">New bathroom install</div>
             </div>
-            <div class="stars">★★★★★</div>
+            <div class="review-stars">★★★★★</div>
           </div>
           <div class="review-text">
-            “Looks after several of my rental properties. Reliable, good with tenants and always
-            fair on price. Exactly what you want from a local plumber.”
+            “Really happy with our new bathroom. Neat pipework, good communication and everything
+            finished on time. Left the house clean at the end of each day.”
           </div>
-          <div class="review-meta">Verified customer</div>
+          <div class="review-source">Customer feedback</div>
         </article>
 
         <article class="review-card">
           <div class="review-header">
             <div>
-              <div class="review-name">Hannah & James – Young family</div>
-              <div class="review-tag">Bathroom refit</div>
+              <div class="review-name">Local landlord</div>
+              <div class="review-meta">Ongoing plumbing support</div>
             </div>
-            <div class="stars">★★★★★</div>
+            <div class="review-stars">★★★★★</div>
           </div>
           <div class="review-text">
-            “We had a full bathroom done including tiling and new suite. The finish is excellent,
-            and they kept everything as tidy as possible while the work was going on.”
+            “Looks after several of my rental properties. Tenants are always happy with how polite
+            and tidy they are. Invoices and certificates are clear and prompt.”
           </div>
-          <div class="review-meta">Verified customer</div>
+          <div class="review-source">Repeat customer</div>
         </article>
 
         <article class="review-card">
           <div class="review-header">
             <div>
-              <div class="review-name">Shop owner – High Street</div>
-              <div class="review-tag">Emergency leak</div>
+              <div class="review-name">Neighbourhood café</div>
+              <div class="review-meta">Leaks & hot water issues</div>
             </div>
-            <div class="stars">★★★★★</div>
+            <div class="review-stars">★★★★★</div>
           </div>
           <div class="review-text">
-            “A leak started coming through the ceiling on a busy day. They were on site quickly,
-            found the issue and got us back open without closing early.”
+            “We rely on them for urgent plumbing issues. They always work around our opening hours
+            and keep disruption to a minimum.”
           </div>
-          <div class="review-meta">Small business customer</div>
+          <div class="review-source">Small business client</div>
         </article>
-      </div>
-    </section>
+      </section>
 
-    <!-- CTA TO LEAVE REVIEW / CONTACT -->
-    <section class="section" id="contact">
-      <div class="contact-cta">
-        <div>
-          <h2 style="margin-bottom:0.25rem;">Already a customer? Tell us how we did.</h2>
-          <p>
-            Feedback helps us keep our standards high and lets future customers know what to expect.
-            If we’ve recently worked for you, we’d really appreciate a quick review.
-          </p>
-          <div class="hero-ctas">
+      <section class="faq-section">
+        <h2 class="faq-title">What people usually want to know before booking.</h2>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <div class="faq-q">Can I see proof of insurance?</div>
+            <div class="faq-a">
+              Yes, we’re fully insured and happy to provide details or show documents on arrival.
+            </div>
+          </article>
+          <article class="faq-item">
+            <div class="faq-q">Do you guarantee your work?</div>
+            <div class="faq-a">
+              All workmanship is guaranteed. If something isn’t right after we’ve attended, we’ll
+              investigate and put it right.
+            </div>
+          </article>
+          <article class="faq-item">
+            <div class="faq-q">How do I leave a review?</div>
+            <div class="faq-a">
+              You can leave a review on Google or send feedback directly and we’ll add it to our
+              records.
+            </div>
+          </article>
+          <article class="faq-item">
+            <div class="faq-q">Do you cover my area?</div>
+            <div class="faq-a">
+              We’re based in Your Town and cover surrounding areas. Call with your postcode and
+              we’ll confirm straight away.
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="cta-box">
+          <div>
+            <h2 style="font-size:1.1rem; margin-bottom:0.3rem;">
+              Ready to see why customers rate us so highly?
+            </h2>
+            <p>
+              Get in touch with what you need help with and we’ll respond with clear options and
+              honest pricing.
+            </p>
+            <div class="cta-meta">
+              No pressure, no sales scripts – just straightforward advice from a local plumber.
+            </div>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
+            <a href="tel:01234567890" class="btn-primary">
+              <span>📞</span><span>Call 01234&nbsp;567&nbsp;890</span>
+            </a>
             <a href="contact.html" class="btn-secondary">
-              <span>📝</span>
-              <span>Send feedback by message</span>
+              <span>📝</span><span>Message for a quote</span>
             </a>
           </div>
-          <div class="contact-meta">
-            For live review links, just ask us when we’re on site or send a quick message.
-          </div>
         </div>
-        <div>
-          <p class="contact-meta" style="margin-top:0;">
-            Thinking about booking us for the first time? Read through the examples above and
-            then head to our <a href="services.html">services</a> or <a href="contact.html">contact</a>
-            page to get started.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer>
-    <div>© <span id="year"></span> Your Company Plumbing. All rights reserved.</div>
-    <div>
-      <a href="/legal.html">Legal</a>
-    </div>
-  </footer>
+    <footer>
+      <div>© <span id="year"></span> Your Company Plumbing. All rights reserved.</div>
+      <div>
+        <a href="/legal.html">Legal</a>
+        &nbsp;·&nbsp;
+        <span>Site framework by BuzzBold Marketing</span>
+      </div>
+    </footer>
+  </div>
 
   <div class="mobile-bar">
-    <div class="mobile-bar-text">Need a plumber? Tap to call now.</div>
+    <div class="mobile-bar-text">Need a trusted plumber? Tap to call now.</div>
     <a href="tel:01234567890" class="mobile-bar-btn">Call plumber</a>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
