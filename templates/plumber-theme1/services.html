@@ -4,323 +4,337 @@
   <meta charset="UTF-8" />
   <title>Plumbing & Heating Services in Your Town | Your Company Plumbing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Full range of plumbing and heating services in Your Town: boiler repairs, leaks, bathrooms, radiators, emergencies and landlord checks. Local, reliable and fully insured." />
+  <meta
+    name="description"
+    content="Full range of plumbing and heating services in Your Town – leaks, boilers, bathrooms, radiators, cylinders and emergency call-outs."
+  />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #020617;
-      --bg-soft: #030712;
-      --card: #020617;
-      --border: #1f2937;
-      --border-soft: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
+      --bg: #f3f4f6;
+      --bg-soft: #ffffff;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
       --accent: #f97316;
-      --accent-deep: #ea580c;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #000 100%);
-      color: var(--text);
+      background: radial-gradient(circle at top, #dbeafe 0, #f3f4f6 42%, #e5e7eb 100%);
+      color: var(--text-main);
       line-height: 1.6;
-      padding-bottom: 4.5rem; /* space for mobile bar */
+      padding-bottom: 4.5rem;
     }
+
     a { color: inherit; text-decoration: none; }
 
-    header {
-      padding: 1.1rem 1.25rem 0.75rem;
-      max-width: 1100px;
+    .page {
+      max-width: 1120px;
       margin: 0 auto;
+      padding: 0.75rem 1.25rem 3.5rem;
+    }
+
+    header {
+      padding: 0.6rem 0 0.4rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
     }
+
     .brand {
       display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
+      align-items: center;
+      gap: 0.65rem;
     }
-    .brand-name {
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #93c5fd, #2563eb 65%, #1d4ed8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eff6ff;
       font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       font-size: 0.9rem;
-      color: var(--accent);
+      box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
     }
-    .brand-tag {
-      font-size: 0.8rem;
-      color: var(--muted);
+
+    .brand-text-main {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #0f172a;
     }
+
+    .brand-text-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
     nav {
       display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
+      gap: 1.2rem;
+      font-size: 0.9rem;
       align-items: center;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
-    nav a {
-      color: var(--muted);
-    }
-    nav a:hover {
-      color: var(--text);
-    }
+
+    nav a { color: var(--text-muted); }
+    nav a:hover { color: var(--text-main); }
+
     .nav-cta {
-      background: rgba(15,23,42,0.95);
-      border-radius: 999px;
-      padding: 0.45rem 0.9rem;
-      border: 1px solid var(--border);
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      font-size: 0.8rem;
-      color: var(--text);
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+      font-size: 0.82rem;
+      color: var(--primary-dark);
+      font-weight: 600;
     }
 
     main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.5rem 1.25rem 3rem;
+      margin-top: 0.7rem;
     }
 
-    /* Hero / intro */
-    .hero-soft {
-      margin: 1.4rem 0 2.2rem;
-      padding: 1.4rem 1.3rem;
-      border-radius: 1.2rem;
-      border: 1px solid var(--border-soft);
-      background:
-        radial-gradient(circle at top left, rgba(248, 113, 22, 0.18), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.08), transparent 60%),
-        #020617;
+    .page-hero {
+      border-radius: 1.4rem;
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 52%, #e5f2ff 100%);
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem 1.5rem 1.3rem;
+      margin-bottom: 1.8rem;
     }
+
     .eyebrow {
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-    }
-    h1 {
-      font-size: clamp(1.9rem, 3vw, 2.3rem);
-      margin-bottom: 0.4rem;
-    }
-    .hero-soft p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      max-width: 44rem;
-    }
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
-      margin-top: 0.9rem;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: #fff;
-      border-radius: 999px;
-      padding: 0.7rem 1.5rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-flex;
-      gap: 0.35rem;
-      align-items: center;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 16px 40px rgba(248,113,22,0.45);
-    }
-    .btn-secondary {
-      border-radius: 999px;
-      padding: 0.65rem 1.3rem;
-      font-size: 0.86rem;
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.85);
-      color: var(--text);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-    .hero-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.3rem;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
     }
 
-    /* Sections & cards */
-    .section {
-      margin-bottom: 2.1rem;
+    h1 {
+      font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+      margin-bottom: 0.4rem;
+      color: #0f172a;
     }
-    .section-head {
-      margin-bottom: 0.8rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+
+    .page-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 40rem;
     }
-    .section-title {
-      font-size: 1.25rem;
+
+    .page-hero-meta {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
-    .section-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 32rem;
-    }
-    .cards-3,
-    .cards-2 {
+
+    .grid-3 {
       display: grid;
-      gap: 0.9rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.8rem;
     }
-    .cards-3 {
-      grid-template-columns: repeat(3, minmax(0,1fr));
-    }
-    .cards-2 {
-      grid-template-columns: repeat(2, minmax(0,1fr));
-    }
+
     @media (max-width: 900px) {
-      .cards-3,
-      .cards-2 {
+      .grid-3 {
         grid-template-columns: 1fr;
       }
     }
+
     .card {
-      background: var(--card);
       border-radius: 1rem;
+      background: var(--bg-soft);
       border: 1px solid var(--border);
-      padding: 1rem 0.95rem 1rem;
-      font-size: 0.86rem;
+      padding: 1rem 0.95rem 0.9rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+      font-size: 0.88rem;
     }
-    .card h2,
-    .card h3 {
-      font-size: 0.98rem;
+
+    .card h2 {
+      font-size: 1rem;
       margin-bottom: 0.25rem;
     }
+
     .card p {
-      font-size: 0.84rem;
-      color: var(--muted);
+      font-size: 0.86rem;
+      color: var(--text-muted);
       margin-bottom: 0.45rem;
     }
+
     .card ul {
       list-style: none;
-      padding-left: 0;
+      margin-bottom: 0.5rem;
     }
+
     .card li {
       display: flex;
-      gap: 0.28rem;
-      margin-bottom: 0.2rem;
-      color: var(--muted);
+      gap: 0.35rem;
+      margin-bottom: 0.22rem;
+      color: var(--text-muted);
       font-size: 0.8rem;
     }
+
     .card li span.icon {
-      color: var(--accent);
-      margin-top: 0.06rem;
-      font-size: 0.82rem;
+      color: #16a34a;
+      font-size: 0.85rem;
+      margin-top: 0.05rem;
     }
+
     .chip {
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
-      padding: 0.15rem 0.55rem;
+      padding: 0.16rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid var(--border);
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
       font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 0.35rem;
+      color: #4b5563;
     }
 
-    /* Guide table */
-    .guide-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
-    }
-    .guide-table th,
-    .guide-table td {
-      border: 1px solid var(--border);
-      padding: 0.5rem 0.55rem;
-      text-align: left;
-    }
-    .guide-table th {
-      background: #030712;
-      font-weight: 500;
-      color: var(--muted);
-    }
-    .guide-table td {
-      color: var(--muted);
-    }
-
-    /* Contact CTA */
-    .contact-cta {
-      border-radius: 1rem;
-      border: 1px solid var(--border);
-      padding: 1rem 0.9rem 0.9rem;
-      background: linear-gradient(135deg, rgba(248,113,22,0.14), rgba(15,23,42,0.95));
-      font-size: 0.9rem;
+    .two-col {
       display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
-      gap: 0.9rem;
-      align-items: center;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
+      gap: 1.2rem;
+      margin-bottom: 2rem;
     }
+
     @media (max-width: 900px) {
-      .contact-cta {
-        grid-template-columns: 1fr;
-      }
+      .two-col { grid-template-columns: 1fr; }
     }
-    .contact-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
+
+    .two-col p { font-size: 0.9rem; color: var(--text-muted); }
+
+    .list-check {
+      list-style: none;
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .list-check li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .list-check span.icon {
+      color: #16a34a;
+      font-size: 0.9rem;
+      margin-top: 0.06rem;
+    }
+
+    .cta-box {
+      border-radius: 1.2rem;
+      border: 1px solid #dbeafe;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      padding: 1rem 1rem 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .cta-meta {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: #4b5563;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 18px 35px rgba(37, 99, 235, 0.45);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #111827;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.3rem 1.25rem 2.2rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e5e7eb;
       display: flex;
-      justify-content: space-between;
-      gap: 0.7rem;
       flex-wrap: wrap;
-    }
-    footer a {
-      color: var(--muted);
+      justify-content: space-between;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      color: #6b7280;
     }
 
-    /* Mobile bottom bar */
+    footer a { color: #4b5563; }
+
     .mobile-bar {
       position: fixed;
       left: 0;
       right: 0;
       bottom: 0;
       padding: 0.55rem 0.9rem;
-      background: #020617;
-      border-top: 1px solid var(--border);
+      background: #0f172a;
+      color: #e5e7eb;
+      border-top: 1px solid #111827;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.7rem;
       font-size: 0.8rem;
       z-index: 40;
     }
-    .mobile-bar-text {
-      color: var(--muted);
-    }
+
+    .mobile-bar-text { color: #cbd5f5; }
+
     .mobile-bar-btn {
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: #fff;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #ffffff;
       border-radius: 999px;
       border: none;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.8rem;
+      padding: 0.38rem 0.95rem;
+      font-size: 0.82rem;
       font-weight: 600;
       white-space: nowrap;
+      text-decoration: none;
     }
+
     @media (min-width: 801px) {
       .mobile-bar { display: none; }
     }
@@ -337,274 +351,173 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="brand-name">Your Company Plumbing</div>
-      <div class="brand-tag">Plumbing • Heating • Emergency call-outs</div>
-    </div>
-    <nav>
-      <a href="index.html#top">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html">Contact</a>
-      <a href="tel:01234567890" class="nav-cta">
-        <span>📞</span>
-        <span>01234&nbsp;567&nbsp;890</span>
-      </a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- INTRO -->
-    <section class="hero-soft">
-      <div class="eyebrow">Plumbing & Heating Services</div>
-      <h1>Everything you need from a local plumber in Your Town.</h1>
-      <p>
-        From tiny leaks to full bathroom refits and boiler breakdowns, Your Company Plumbing
-        handles the day-to-day jobs that keep your home or rental running smoothly. No call
-        centres, no confusing pricing – just straightforward, tidy work.
-      </p>
-      <div class="hero-ctas">
-        <a href="tel:01234567890" class="btn-primary">
-          <span>📞</span>
-          <span>Call now for fast booking</span>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">PL</div>
+        <div>
+          <div class="brand-text-main">Your Company Plumbing</div>
+          <div class="brand-text-sub">Plumbing • Heating • 24/7 emergencies</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html#top">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:01234567890" class="nav-cta">
+          <span>📞</span><span>01234&nbsp;567&nbsp;890</span>
         </a>
-        <a href="contact.html" class="btn-secondary">
-          <span>📝</span>
-          <span>Request a quote by message</span>
-        </a>
-      </div>
-      <div class="hero-meta">
-        Serving Your Town and nearby areas for homeowners, landlords and small businesses.
-      </div>
-    </section>
+      </nav>
+    </header>
 
-    <!-- EMERGENCY & REPAIRS -->
-    <section class="section">
-      <div class="section-head">
+    <main>
+      <section class="page-hero">
+        <div class="eyebrow">Services</div>
+        <h1>Plumbing & heating services to keep your home running smoothly.</h1>
+        <p class="page-sub">
+          From one-off repairs to planned upgrades, we handle the day-to-day plumbing and heating
+          jobs that keep Your Town homes and small businesses comfortable.
+        </p>
+        <div class="page-hero-meta">
+          If you don’t see exactly what you need below, just ask – chances are we’ve done it before.
+        </div>
+      </section>
+
+      <section class="grid-3">
+        <article class="card">
+          <h2>Boiler repairs & servicing</h2>
+          <p>Fast diagnosis and repairs when your boiler stops behaving.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>Boilers not firing or locking out.</span></li>
+            <li><span class="icon">✔</span><span>Low pressure, strange noises or no hot water.</span></li>
+            <li><span class="icon">✔</span><span>Annual servicing and landlord gas safety checks.</span></li>
+          </ul>
+          <span class="chip">Breakdowns & routine servicing</span>
+        </article>
+
+        <article class="card">
+          <h2>Leaks, bursts & pipework</h2>
+          <p>From slow drips to full-on bursts, we get water where it should be.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>Leak detection and pipe repairs.</span></li>
+            <li><span class="icon">✔</span><span>Repair or replacement of damaged sections.</span></li>
+            <li><span class="icon">✔</span><span>Stop taps, outside taps and main feeds.</span></li>
+          </ul>
+          <span class="chip">Emergency & non-urgent jobs</span>
+        </article>
+
+        <article class="card">
+          <h2>Radiators & heating systems</h2>
+          <p>Make sure every room gets warm and your system runs efficiently.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>New radiators fitted and old ones moved.</span></li>
+            <li><span class="icon">✔</span><span>Bleeding, balancing and fault finding.</span></li>
+            <li><span class="icon">✔</span><span>Thermostatic valves and controls.</span></li>
+          </ul>
+          <span class="chip">Smarter, warmer homes</span>
+        </article>
+      </section>
+
+      <section class="grid-3">
+        <article class="card">
+          <h2>Bathrooms & cloakrooms</h2>
+          <p>From simple swaps to full bathroom refits and upgrades.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>New toilets, basins, baths and showers.</span></li>
+            <li><span class="icon">✔</span><span>En-suites and downstairs WCs.</span></li>
+            <li><span class="icon">✔</span><span>Coordination with tilers and other trades if needed.</span></li>
+          </ul>
+          <span class="chip">Plumbing-focused bathroom work</span>
+        </article>
+
+        <article class="card">
+          <h2>Cylinders & hot water</h2>
+          <p>Consistent hot water for showers, baths and everyday use.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>Unvented and vented cylinder work.</span></li>
+            <li><span class="icon">✔</span><span>Immersion heater repairs and replacements.</span></li>
+            <li><span class="icon">✔</span><span>Temperature and pressure problems resolved.</span></li>
+          </ul>
+          <span class="chip">Hot water that just works</span>
+        </article>
+
+        <article class="card">
+          <h2>Blockages & drains</h2>
+          <p>When water isn’t draining away, we get things flowing again.</p>
+          <ul>
+            <li><span class="icon">✔</span><span>Blocked sinks, baths and showers.</span></li>
+            <li><span class="icon">✔</span><span>Toilet blockages and slow flushing.</span></li>
+            <li><span class="icon">✔</span><span>Advice if specialist drain jetting is needed.</span></li>
+          </ul>
+          <span class="chip">Honest advice on what’s needed</span>
+        </article>
+      </section>
+
+      <section class="two-col">
         <div>
-          <div class="eyebrow">Fast help</div>
-          <div class="section-title">Emergency call-outs & urgent repairs.</div>
-        </div>
-        <div class="section-sub">
-          When water is going where it shouldn’t, you don’t want to wait. We prioritise
-          genuine emergencies and give you an honest ETA and guide price before we set off.
-        </div>
-      </div>
-
-      <div class="cards-3">
-        <article class="card">
-          <h3>Burst pipes & major leaks</h3>
-          <p>Rapid response for leaks that can damage your home if left untreated.</p>
-          <ul>
-            <li><span class="icon">✔</span><span>Help to shut off the mains over the phone.</span></li>
-            <li><span class="icon">✔</span><span>Emergency pipe repairs and temporary fixes.</span></li>
-            <li><span class="icon">✔</span><span>Follow-up permanent repair where needed.</span></li>
-          </ul>
-          <span class="chip">Priority attendance</span>
-        </article>
-
-        <article class="card">
-          <h3>No heating or hot water</h3>
-          <p>Boilers or systems that stop without warning – especially in cold weather.</p>
-          <ul>
-            <li><span class="icon">✔</span><span>Fault finding on combi and system boilers.</span></li>
-            <li><span class="icon">✔</span><span>Emergency temporary heat where possible.</span></li>
-            <li><span class="icon">✔</span><span>Parts sourced quickly from trusted suppliers.</span></li>
-          </ul>
-          <span class="chip">Boiler breakdowns</span>
-        </article>
-
-        <article class="card">
-          <h3>Blocked toilets, sinks & drains</h3>
-          <p>Blockages that won’t shift with plungers or shop-bought products.</p>
-          <ul>
-            <li><span class="icon">✔</span><span>Internal toilet and sink blockages cleared.</span></li>
-            <li><span class="icon">✔</span><span>Advice where specialist drain jetting is needed.</span></li>
-            <li><span class="icon">✔</span><span>Clean, tidy and respectful of your home.</span></li>
-          </ul>
-          <span class="chip">Hygienic clean-up</span>
-        </article>
-      </div>
-    </section>
-
-    <!-- BOILERS & HEATING -->
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Warm & efficient</div>
-          <div class="section-title">Boilers, radiators and heating systems.</div>
-        </div>
-      </div>
-
-      <div class="cards-2">
-        <article class="card">
-          <h3>Boiler servicing & repairs</h3>
-          <p>Keeping your boiler safe, efficient and ready for winter.</p>
-          <ul>
-            <li><span class="icon">✔</span><span>Annual servicing for combi and system boilers.</span></li>
-            <li><span class="icon">✔</span><span>Diagnostics for strange noises, low pressure and faults.</span></li>
-            <li><span class="icon">✔</span><span>Landlord gas safety certificates for rented homes.</span></li>
-          </ul>
-          <span class="chip">Proactive maintenance</span>
-        </article>
-
-        <article class="card">
-          <h3>Radiators & pipework</h3>
-          <p>Solving uneven heating and noisy, tired-looking systems.</p>
-          <ul>
-            <li><span class="icon">✔</span><span>Radiator repairs, replacements and relocations.</span></li>
-            <li><span class="icon">✔</span><span>System balancing to even out heat across rooms.</span></li>
-            <li><span class="icon">✔</span><span>Advice on thermostatic valves and controls.</span></li>
-          </ul>
-          <span class="chip">Comfort & control</span>
-        </article>
-      </div>
-    </section>
-
-    <!-- BATHROOMS & PLANNED WORK -->
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Upgrades</div>
-          <div class="section-title">Bathrooms, kitchens and planned projects.</div>
-        </div>
-        <div class="section-sub">
-          Ready to refresh a tired bathroom or finally fix that awkward kitchen layout?
-          We can handle the plumbing side and work with your other trades if needed.
-        </div>
-      </div>
-
-      <div class="cards-3">
-        <article class="card">
-          <h3>Bathroom installs & refurbishments</h3>
-          <p>From like-for-like swaps to full redesigns.</p>
-          <ul>
-            <li><span class="icon">✔</span><span>New toilets, basins, showers and baths fitted.</span></li>
-            <li><span class="icon">✔</span><span>En-suites and downstairs cloakrooms.</span></li>
-            <li><span class="icon">✔</span><span>Advice on practical layouts and water pressure.</span></li>
-          </ul>
-          <span class="chip">Clean, tidy workmanship</span>
-        </article>
-
-        <article class="card">
-          <h3>Kitchen plumbing</h3>
-          <p>Keeping the heart of your home running smoothly.</p>
-          <ul>
-            <li><span class="icon">✔</span><span>New sinks, taps and under-sink pipework.</span></li>
-            <li><span class="icon">✔</span><span>Dishwasher and washing machine connections.</span></li>
-            <li><span class="icon">✔</span><span>Stop tap upgrades and leak prevention.</span></li>
-          </ul>
-          <span class="chip">Minimal disruption</span>
-        </article>
-
-        <article class="card">
-          <h3>Landlords & light commercial</h3>
-          <p>Reliable support for rental properties and small businesses.</p>
-          <ul>
-            <li><span class="icon">✔</span><span>End-of-tenancy checks and remedial work.</span></li>
-            <li><span class="icon">✔</span><span>Reactive repairs with tenant communication.</span></li>
-            <li><span class="icon">✔</span><span>Shops, salons, small offices and workshops.</span></li>
-          </ul>
-          <span class="chip">Clear communication</span>
-        </article>
-      </div>
-    </section>
-
-    <!-- GUIDE TABLE -->
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Guide only</div>
-          <div class="section-title">Typical jobs & approximate visit times.</div>
-        </div>
-      </div>
-
-      <p class="section-sub" style="margin-bottom:0.6rem;">
-        Every job is different, but this gives you a sense of how long common visits take.
-        You’ll always get clear pricing before work starts.
-      </p>
-
-      <div class="card" style="margin-top:0.2rem;">
-        <table class="guide-table">
-          <thead>
-            <tr>
-              <th>Job type</th>
-              <th>Typical time on site</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Replace kitchen tap</td>
-              <td>45–90 minutes</td>
-              <td>Assuming easy access to pipework and isolation valves.</td>
-            </tr>
-            <tr>
-              <td>Diagnose & fix small leak</td>
-              <td>1–2 hours</td>
-              <td>Complex leaks or hidden pipework can take longer.</td>
-            </tr>
-            <tr>
-              <td>Boiler service</td>
-              <td>45–75 minutes</td>
-              <td>Includes basic safety checks and paperwork.</td>
-            </tr>
-            <tr>
-              <td>Radiator replacement</td>
-              <td>1.5–3 hours</td>
-              <td>Depends on size, location and valve condition.</td>
-            </tr>
-            <tr>
-              <td>Bathroom refit</td>
-              <td>3–7 days</td>
-              <td>Timing agreed in advance based on scope.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- CONTACT CTA -->
-    <section class="section" id="contact">
-      <div class="contact-cta">
-        <div>
-          <h2 style="margin-bottom:0.25rem;">Ready to book a plumber in Your Town?</h2>
+          <div class="eyebrow">Who we work with</div>
+          <h2 style="font-size:1.15rem; margin-bottom:0.3rem;">
+            Homeowners, landlords and small businesses in Your Town.
+          </h2>
           <p>
-            Whether it’s an urgent leak or a planned upgrade, one quick call starts the process.
-            If you prefer, send photos and details by message and we’ll reply with times and options.
+            Most of our work is for people who want a reliable plumber they can call when needed –
+            not a different face every time. We’re used to working around busy family homes, tenants
+            and small commercial spaces.
           </p>
-          <div class="hero-ctas" style="margin-top:0.6rem;">
+        </div>
+        <div>
+          <div class="eyebrow">How we price jobs</div>
+          <p>
+            Before we pick up a tool, you’ll understand how the job is priced and what’s included.
+            For emergencies, we explain the call-out and first hour. For planned work, we’ll provide
+            a clear written quote.
+          </p>
+          <ul class="list-check">
+            <li><span class="icon">✔</span><span>No hidden extras added at the end.</span></li>
+            <li><span class="icon">✔</span><span>Options where there’s more than one way to do the job.</span></li>
+            <li><span class="icon">✔</span><span>Advice if something can safely wait until later.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="cta-box">
+          <div>
+            <h2 style="font-size:1.1rem; margin-bottom:0.3rem;">
+              Not sure which service you need? Just tell us what’s happening.
+            </h2>
+            <p>
+              Describe the problem in your own words – we’ll translate it into a plan, timescale and
+              straightforward pricing.
+            </p>
+            <div class="cta-meta">
+              Photos or short videos are really useful, especially for leaks, boilers and bathroom
+              projects.
+            </div>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
             <a href="tel:01234567890" class="btn-primary">
-              <span>📞</span>
-              <span>01234&nbsp;567&nbsp;890</span>
+              <span>📞</span><span>Call 01234&nbsp;567&nbsp;890</span>
             </a>
             <a href="contact.html" class="btn-secondary">
-              <span>📝</span>
-              <span>Message for a quote</span>
+              <span>📝</span><span>Message for advice</span>
             </a>
           </div>
-          <div class="contact-meta">
-            Typical working hours: Mon–Fri 8am–6pm with emergency cover where possible outside these times.
-          </div>
         </div>
-        <div>
-          <p class="contact-meta" style="margin-top:0;">
-            <strong>Best results:</strong> include your postcode, a short description of the issue,
-            and any photos you have. That helps us give you clearer advice and guide prices from the start.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer>
-    <div>© <span id="year"></span> Your Company Plumbing. All rights reserved.</div>
-    <div>
-      <a href="/legal.html">Legal</a>
-    </div>
-  </footer>
+    <footer>
+      <div>© <span id="year"></span> Your Company Plumbing. All rights reserved.</div>
+      <div>
+        <a href="/legal.html">Legal</a>
+        &nbsp;·&nbsp;
+        <span>Site framework by BuzzBold Marketing</span>
+      </div>
+    </footer>
+  </div>
 
   <div class="mobile-bar">
     <div class="mobile-bar-text">Need a plumber? Tap to call now.</div>
@@ -612,7 +525,7 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
